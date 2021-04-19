@@ -1,0 +1,33 @@
+{
+  "name": "gautierdeconinck_6_19042021",
+  "version": "1.0.0",
+  "description": "FishEye website - Créez un site accessible pour une plateforme de photographes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js --mode production",
+    "serve": "webpack serve  --mode development"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "css-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^1.4.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.5",
+    "postcss-loader": "^5.0.0",
+    "sass-loader": "^11.0.0",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gautier-DC/GautierDeConinck_6_19042021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gautier-DC/GautierDeConinck_6_19042021/issues"
+  },
+  "homepage": "https://github.com/Gautier-DC/GautierDeConinck_6_19042021#readme"
+}
