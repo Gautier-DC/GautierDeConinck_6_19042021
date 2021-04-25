@@ -1,0 +1,13 @@
+$font-size: (body:1em, heading: 2.3em, profil-name: 2.2em, button: 1.2em);
+
+$color-primary: #901C1C; //* Secondary for text *//
+$color-secondary: #D3573C; //* Primary for text *//
+$color-tertiary: #525252;
+$color-light-bg: #FAFAFA;
+$color-shadow: rgba(123, 125, 126, 0.3);
+
+$breakpoints: (
+    tablet:768px,
+    tablet-landscape:992px,
+    desktop:1200px
+);

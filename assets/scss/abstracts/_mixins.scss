@@ -1,0 +1,21 @@
+@import "/assets/scss/abstracts/variables";
+
+@mixin tablet {
+    @media screen and (min-width: map-get($breakpoints, tablet)){
+      @content;
+    }
+  }
+  @mixin tablet-landscape {
+    @media screen and (min-width: map-get($breakpoints, tablet-landscape)){
+      @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+      @content;
+    }
+  }
+
+  @mixin shadow {
+    box-shadow: 0 5px 9px $color-shadow;
+  }
