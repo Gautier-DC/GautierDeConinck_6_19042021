@@ -1,47 +1,47 @@
-header{
-    padding: 2em 2.5em 1em;
-    justify-content: space-between;
+header {
+  padding: 2em 2.5em 1em;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  #logo {
+    flex-basis: 150px;
+    @include desktop {
+      flex-basis: 200px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  #h1-container {
+    flex-basis: 40%;
+    @include desktop {
+      order: 2;
+      flex-basis: 26%;
+    }
+    h1 {
+      font-size: 0.9em;
+      font-weight: lighter;
+      color: $color-primary;
+      text-align: right;
+      white-space: nowrap;
+      @include desktop {
+        font-size: map-get($font-size, heading);
+      }
+    }
+  }
+  nav {
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    #logo{
-        flex-basis: 150px;
-        @include desktop {
-            flex-basis: 200px;
-        }
-        img{
-            width: 100%;
-        }
+    flex-basis: 100%;
+    @include desktop {
+      order: 1;
+      flex: 0 1 48%;
     }
-    #h1-container{
-        flex-basis: 40%;
-        @include desktop {
-            order: 2;
-            flex-basis: 26%;
-        }
-        h1{
-            font-size: 0.9em;
-            font-weight: lighter;
-            color: $color-primary;
-            text-align: right;
-            white-space: nowrap;
-            @include desktop {
-                font-size: map-get($font-size , heading )
-            }
-        }        
+    ul {
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    nav{
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-basis: 100%;
-        @include desktop {
-            order: 1;
-            flex: 0 1 48%;
-        }
-        ul{
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-    }
+  }
 }

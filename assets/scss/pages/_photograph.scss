@@ -1,1 +1,173 @@
 @import "../main.scss";
+
+#banner-container {
+  height: 125px;
+  flex-basis: 100%;
+  justify-content: space-between;
+  align-items: center;
+  @include desktop {
+    height: 313px;
+    margin: 0 2em;
+    background-color: $color-light-bg;
+    border-radius: 1em;
+  }
+  .photographer-description {
+    line-height: 1.5em;
+    @include desktop {
+      height: 200px;
+      justify-content: space-between;
+    }
+    h1 {
+      font-weight: lighter;
+      font-size: map-get($font-size, profil-name);
+      color: $color-secondary;
+      margin: 0;
+      margin-bottom: 0.2em;
+      white-space: nowrap;
+      @include desktop {
+        font-size: map-get($font-size, heading);
+      }
+    }
+    #location {
+      font-weight: lighter;
+      font-size: map-get($font-size, body);
+      color: $color-primary;
+      @include desktop {
+        font-size: map-get($font-size, location);
+      }
+    }
+    #catchphrase {
+      color: $color-tertiary;
+      font-size: 0.8em;
+      margin-bottom: 0.2em;
+      @include desktop {
+        font-size: map-get($font-size, body);
+      }
+    }
+  }
+
+  .open-modal-btn {
+    @include button;
+    align-self: flex-start;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -80.3px;
+    @include desktop {
+      position: relative;
+      left: 8em;
+      bottom: 0;
+      top: 1.5em;
+    }
+  }
+  .profil-pic {
+    height: 100px;
+    flex: 0 0 100px;
+    margin: 0;
+    margin-top: -1em;
+    align-self: flex-start;
+    @include desktop {
+      height: 200px;
+      flex: 0 0 200px;
+      align-self: center;
+      margin-left: auto;
+    }
+  }
+}
+
+#filters {
+  display: none;
+  @include desktop {
+    display: block;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &-options {
+    font-weight: bolder;
+    margin-top: 0.7em;
+    margin-right: 1em;
+  }
+  [role="listbox"] {
+    @include button;
+    position: absolute;
+    top: 46%;
+    left: 8.5%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.8em;
+  }
+  [role="option"] {
+    width: 100%;    
+  }
+  li:nth-child(1)::after, li:nth-child(2)::after{
+    content: "";
+    width: 95%;
+    margin: 0.5em 0;
+    display: block;
+    top: 10px;
+    height: 1px;
+    background-color: #fff;
+  }
+  #chevron{
+    width: 0.6em;
+    margin-left: 0.5em;
+  }
+}
+
+#gallery {
+  justify-content: space-between;
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .picture-card {
+    height: 218px;
+    flex-basis: 100%;
+    margin: 0;
+    margin-bottom: 0.9em;
+    justify-content: space-between;
+    @include desktop {
+      height: 351px;
+      flex-basis: 350px;
+    }
+    a {
+      height: 190px;
+      width: 100%;
+      margin-bottom: 0.5em;
+      @include desktop {
+        height: 300px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0.5em;
+      }
+    }
+  }
+}
+
+.picture-description {
+  justify-content: space-between;
+  align-items: center;
+  color: $color-primary;
+  @include desktop {
+    font-size: map-get($font-size, location);
+    padding-bottom: 0.4em;
+  }
+  h3 {
+    font-weight: lighter;
+    font-size: map-get($font-size, body);
+    flex-grow: 1;
+  }
+  .heart {
+    width: 1em;
+    fill: $color-primary;
+  }
+  p {
+    margin-right: 1em;
+  }
+}

@@ -19,3 +19,13 @@
   @mixin shadow {
     box-shadow: 0 5px 9px $color-shadow;
   }
+
+  @mixin button {
+    background-color: $color-primary;
+    color: #fff;
+    font-size: map-get($font-size, button);
+    white-space: nowrap;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 0.5em;
+  }
