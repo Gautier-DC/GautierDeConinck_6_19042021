@@ -17,6 +17,7 @@ body {
 ol,
 ul {
   list-style: none;
+  margin: 0;
 }
 
 a {
@@ -33,7 +34,7 @@ p {
   margin: 0;
 }
 
-.tag-container{
+.tag-container {
   padding-left: 0;
 }
 
@@ -41,6 +42,7 @@ p {
   height: 200px;
   width: 200px;
   margin-bottom: 2em;
+  flex: 0 0 200px;
   img {
     width: 100%;
     height: 100%;
@@ -50,6 +52,6 @@ p {
   }
 }
 
-section{
-  padding: 0 2em;
+section {
+  padding: 1em 2em;
 }

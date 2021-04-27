@@ -4,62 +4,200 @@
     <meta charset="utf-8" />
     <meta name="description" content="Trouvez votre photographe en un clic avec Fisheye !" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/dist/css/photograph.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <title>Fisheye - Bienvenue</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Fisheye - Profil de</title>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
+    <header class="d-flex row">
       <a href="index.html" id="logo" aria-label="lien vers la page d'accueil de Fisheye"
         ><img src="../assets/img/logo-fisheye.png" alt="Logo de Fisheye"
       /></a>
     </header>
     <main id="main-wrapper">
-        <section class="banner-container" role="banner">
-            <div class="photographer-description">
-                <h1>Kold Barkley</h1>
-                <h2 class="location">Auckland, New Zealand</h2>
-                <p class="catchphrase">Voir le beau dans le quotidien</p>
-            </div>
-            <!-- Generate tags with JS -->
-            <nav id="tags" role="navigation" aria-label="photographer categories"></nav>
-            <button class="open-modal-btn">Contactez-moi</button>
-            <!-- Sample / replace it with JS -->
-            <figure>
-                <img src="/assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="">
-            </figure>
-        </section>
-        <section class="filters" id="filters">
-          <div class="leftarea">
-              <span id="filters-options">
-                  Trier par :
-              </span>
-              <div id="option-wrapper">
-                  <button aria-haspopup="listbox" aria-labelledby="filters-options filters-button" aria-expanded="false" id="filters-button">Popularité</button>
-                  <ul id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
-                      <li id="filters-options-popularity" aria-selected="true" role="option">Popularité</li>
-                      <li id="filters-options-date" aria-selected="false" role="option">Date</li>
-                      <li id="filters-options-title" aria-selected="false" role="option">Titre</li>
-                  </ul>
-              </div>
-          </div>  
-        </section>
-        <section id="gallery">
-            <!-- Sample / replace it with JS -->
-            <figure>
-                <a href="#"><img src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg" alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "></a>
-                <div class="picture_description">
-                    <h3 class="picture-name">Arc-en-ciel</h3>
-                    <p>70€</p>
-                    <svg aria-hidden="true" class="heart" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-describedby="title svg-description">
-                        <title id="title">Coeur</title>
-                        <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
-                        <path fill="black" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
-                    </svg>
-                </div>
-            </figure>
-        </section>
+      <section class="d-flex row" id="banner-container" role="banner">
+        <div class="photographer-description d-flex column">
+          <h1>Kold Barkley</h1>
+          <h2 id="location">Auckland, New Zealand</h2>
+          <p id="catchphrase">Voir le beau dans le quotidien</p>
+          <!-- Generate tags with JS -->
+          <ul class="d-flex row tag-container">
+            <li class="tags">#Portrait</li>
+            <li class="tags">#Art</li>
+            <li class="tags">#Fashion</li>
+          </ul>
+        </div>
+        <button class="open-modal-btn">Contactez-moi</button>
+        <!-- Sample / replace it with JS -->
+        <figure class="profil-pic">
+          <img src="/assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="" />
+        </figure>
+      </section>
+      <section class="filters d-flex row" id="filters">
+        <div class="left-area d-flex row">
+          <span id="filters-options"> Trier par </span>
+          <div id="option-wrapper">
+            <button aria-haspopup="listbox" aria-labelledby="filters-options filters-button" aria-expanded="false" id="filters-button">
+              Popularité
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="chevron-right"
+                id="chevron"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                />
+              </svg>
+            </button>
+            <ul id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
+              <li id="filters-options-popularity" aria-selected="true" role="option">Popularité</li>
+              <li id="filters-options-date" aria-selected="false" role="option">Date</li>
+              <li id="filters-options-title" aria-selected="false" role="option">Titre</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="gallery" class="d-flex column">
+        <!-- Sample / replace it with JS -->
+        <figure class="picture-card d-flex column">
+          <a href="#"
+            ><img
+              src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg"
+              alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+          /></a>
+          <div class="picture-description d-flex row">
+            <h3 id="picture-name">Arc-en-ciel</h3>
+            <p>70€</p>
+            <svg
+              aria-hidden="true"
+              class="heart"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              aria-describedby="title svg-description"
+            >
+              <title id="title">Coeur</title>
+              <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
+              <path
+                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+              />
+            </svg>
+          </div>
+        </figure>
+        <figure class="picture-card d-flex column">
+          <a href="#"
+            ><img
+              src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg"
+              alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+          /></a>
+          <div class="picture-description d-flex row">
+            <h3 id="picture-name">Arc-en-ciel</h3>
+            <p>70€</p>
+            <svg
+              aria-hidden="true"
+              class="heart"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              aria-describedby="title svg-description"
+            >
+              <title id="title">Coeur</title>
+              <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
+              <path
+                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+              />
+            </svg>
+          </div>
+        </figure>
+        <figure class="picture-card d-flex column">
+          <a href="#"
+            ><img
+              src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg"
+              alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+          /></a>
+          <div class="picture-description d-flex row">
+            <h3 id="picture-name">Arc-en-ciel</h3>
+            <p>70€</p>
+            <svg
+              aria-hidden="true"
+              class="heart"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              aria-describedby="title svg-description"
+            >
+              <title id="title">Coeur</title>
+              <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
+              <path
+                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+              />
+            </svg>
+          </div>
+        </figure>
+        <figure class="picture-card d-flex column">
+          <a href="#"
+            ><img
+              src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg"
+              alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+          /></a>
+          <div class="picture-description d-flex row">
+            <h3 id="picture-name">Arc-en-ciel</h3>
+            <p>70€</p>
+            <svg
+              aria-hidden="true"
+              class="heart"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              aria-describedby="title svg-description"
+            >
+              <title id="title">Coeur</title>
+              <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
+              <path
+                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+              />
+            </svg>
+          </div>
+        </figure>
+        <figure class="picture-card d-flex column">
+          <a href="#"
+            ><img
+              src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg"
+              alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+          /></a>
+          <div class="picture-description d-flex row">
+            <h3 id="picture-name">Arc-en-ciel</h3>
+            <p>70€</p>
+            <svg
+              aria-hidden="true"
+              class="heart"
+              focusable="false"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              aria-describedby="title svg-description"
+            >
+              <title id="title">Coeur</title>
+              <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
+              <path
+                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+              />
+            </svg>
+          </div>
+        </figure>
+      </section>
     </main>
     <script></script>
   </body>
