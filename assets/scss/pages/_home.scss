@@ -17,23 +17,22 @@
     }
 }
 
-section {
+.photographers-list {
     flex-direction: column;
+    flex-basis: 100%;
     @include desktop {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     } 
     article{
     justify-content: center;
     align-items: center;
-    width: 100%;
+    flex-basis: 100%;
     @include desktop {
-        width: 20%;
+        flex-basis: 28%;
     }
-        .main-profil {
-        justify-content: center;
-        align-items: center;
-        }
         .profil-description{
             height: 200px;
             line-height: 1.6em;
