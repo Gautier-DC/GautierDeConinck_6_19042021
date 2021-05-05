@@ -1,63 +1,63 @@
 @import "../main.scss";
 
 #gotop {
-     background-color: lighten($color-secondary, 20%);
-     padding: 0.4em 0.8em;
-     border-radius: 0.5em;
-     font-weight: bold;
-     text-align: center;
-     position: fixed;
-     top: 1em;
-     left: 50%;
-     margin-left: -84px;
-     order: 99;
-     display: none;
-     @include desktop {
-        display: block;
-    }
+  background-color: lighten($color-secondary, 20%);
+  padding: 0.4em 0.8em;
+  border-radius: 0.5em;
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  top: 1em;
+  left: 50%;
+  margin-left: -140px;
+  order: 99;
+  display: none;
+  @include desktop {
+    display: block;
+  }
 }
 
-section {
-    flex-direction: column;
-    @include desktop {
-        flex-direction: row;
-        justify-content: space-between;
-    } 
-    article{
+.photographers-list {
+  flex-direction: column;
+  flex-basis: 100%;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  article {
     justify-content: center;
     align-items: center;
-    width: 100%;
-    @include desktop {
-        width: 20%;
+    flex-basis: 100%;
+    @include tablet {
+      flex-basis: 28%;
     }
-        .main-profil {
-        justify-content: center;
-        align-items: center;
-        }
-        .profil-description{
-            height: 200px;
-            line-height: 1.6em;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: nowrap;
-            h2 {
-                color: $color-secondary;
-                font-weight: 400;
-                font-size: map-get($font-size, profil-name);
-                margin-bottom: 0.4em;
-            }
-            h3 {
-                color: $color-primary;
-                font-weight: 400;
-                font-size: map-get($font-size, button)
-            }
-            .price{
-                color: $color-tertiary;
-            }
-            .tags{
-                padding: 0 0.4em ;
-                border-radius: 1.5em;
-            }
-        }
+    .profil-description {
+      height: 200px;
+      line-height: 1.6em;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      h2 {
+        color: $color-secondary;
+        font-weight: 400;
+        font-size: map-get($font-size, profil-name);
+        margin-bottom: 0.4em;
+        white-space: nowrap;
+      }
+      h3 {
+        color: $color-primary;
+        font-weight: 400;
+        font-size: map-get($font-size, button);
+      }
+      .price {
+        color: $color-tertiary;
+      }
+      .tags {
+        padding: 0 0.4em;
+        border-radius: 1.5em;
+      }
     }
+  }
 }

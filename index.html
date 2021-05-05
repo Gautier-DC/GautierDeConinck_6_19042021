@@ -18,22 +18,23 @@
       <div id="h1-container"><h1>Nos photographes</h1></div>
       <!-- Generate tags with JS -->
       <nav id="tag-list" role="navigation" aria-label="photographer categories">
-        <ul class="d-flex row tag-container">
-          <li class="tags">#Portrait</li>
-          <li class="tags">#Art</li>
-          <li class="tags">#Fashion</li>
-          <li class="tags">#Architecture</li>
-          <li class="tags">#Travel</li>
-          <li class="tags">#Sport</li>
-          <li class="tags">#Animals</li>
-          <li class="tags">#Events</li>
+        <ul class="d-flex row" id="filters-tags-container">
+          <li class="tags"><a href="index.html">#All</a></li>
+          <li class="tags"><a href="?tag=portrait">#Portrait</a></li>
+          <li class="tags"><a href="?tag=art">#Art</a></li>
+          <li class="tags"><a href="?tag=fashion">#Fashion</a></li>
+          <li class="tags"><a href="?tag=architecture">#Architecture</a></li>
+          <li class="tags"><a href="?tag=travel">#Travel</a></li>
+          <li class="tags"><a href="?tag=sport">#Sport</a></li>
+          <li class="tags"><a href="?tag=animals">#Animals</a></li>
+          <li class="tags"><a href="?tag=event">#Event</a></li>
         </ul>
       </nav>
     </header>
     <main id="main-wrapper">
       <a href="#" id="gotop">Passer au contenu</a>
       <section class="d-flex photographers-list">
-        <!-- Generate photographers list with JS -->
+        <!-- Generate photographers list with JS 
         <article class="d-flex column">
           <a href="/pages/photograph.html" class="main-profil d-flex column">
             <figure class="profil-pic"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="Profil de Kimi Keel" /></figure>
@@ -69,24 +70,22 @@
           </a>
         </article>
         <article class="d-flex column">
-          <a href="#" class="d-flex column">
-            <figure class="profil-pic"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="Profil de Kimi Keel" /></figure>
-            <div class="d-flex column profil-description">
-              <h2>Mimi Keel</h2>
-              <h3>London, UK</h3>
-              <p>Voir le beau dans le quotidien</p>
-              <p class="price">250€/jour</p>
-              <ul class="d-flex row tag-container">
-                <li class="tags">#Portrait</li>
-                <li class="tags">#Art</li>
-                <li class="tags">#Fashion</li>
-                <li class="tags">#Fashion</li>
-              </ul>
-            </div>
-          </a>
-        </article>
+          <figure class="profil-pic"><a href="/pages/photograph.html"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="Profil de Kimi Keel" /></a></figure>
+          <div class="d-flex column profil-description">
+            <h2><a href="/pages/photograph.html">Mimi Keel</a></h2>
+            <h3>London, UK</h3>
+            <p>Voir le beau dans le quotidien</p>
+            <p class="price">250€/jour</p>
+            <ul class="d-flex row tag-container">
+              <li class="tags">#Portrait</li>
+              <li class="tags">#Art</li>
+              <li class="tags">#Fashion</li>
+              <li class="tags">#Fashion</li>
+            </ul>
+          </div>
+        </article> -->
       </section>
     </main>
-    <script></script>
+    <script src="./assets/dist/js/home.js"></script>
   </body>
 </html>

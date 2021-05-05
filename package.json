@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/Gautier-DC/GautierDeConinck_6_19042021/issues"
   },
-  "homepage": "https://github.com/Gautier-DC/GautierDeConinck_6_19042021#readme"
+  "homepage": "https://github.com/Gautier-DC/GautierDeConinck_6_19042021#readme",
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
 }

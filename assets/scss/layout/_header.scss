@@ -34,11 +34,14 @@ header {
     align-items: center;
     flex-wrap: wrap;
     flex-basis: 100%;
+    margin-top: 1em;
     @include desktop {
+      margin-top: 0;
       order: 1;
       flex: 0 1 48%;
     }
     ul {
+      padding: 0;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
