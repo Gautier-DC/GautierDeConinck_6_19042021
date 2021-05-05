@@ -5,6 +5,15 @@
     margin: 0.2em;
     color: $color-primary;
     font-size: 0.8em;
+    &.filters{
+        &:hover{
+            cursor: pointer;;
+        }
+        &:active{
+            background-color: $color-primary;
+            color: #fff;
+        }
+    }
 }
 
 #filters-button{

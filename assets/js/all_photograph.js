@@ -1,4 +1,7 @@
 function showPhotographers() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const tagParam = urlParams.get("tag");
+  console.log("coucou", tagParam);
   fetch("/FishEyeDataFR.json")
     .then((response) => {
       if (!response.ok) {
@@ -7,7 +10,13 @@ function showPhotographers() {
       return response.json();
     })
     .then((data) => {
-      setPhotographersHTML(data.photographers);
+      let filteredPhotographers = data.photographers;
+      if (tagParam) {
+        filteredPhotographers = filteredPhotographers.filter(function (photographer) {
+          return photographer.tags.includes(tagParam);
+        });
+      }
+      setPhotographersHTML(filteredPhotographers);
     })
     .catch(function (error) {
       console.log("error", error);
@@ -28,7 +37,7 @@ function setPhotographersHTML(photographers) {
             <p class="price">${element.price}€/jour</p>
             <ul class="d-flex row tags-container">`;
     element.tags.forEach((tag) => {
-      photographHTML += `<li class="tags">#${tag}</li>`
+      photographHTML += `<li class="tags"><a href='?tag=${tag}'>#${tag}</li>`;
     });
     photographHTML += `</ul>
     </div>
