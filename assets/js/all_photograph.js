@@ -1,7 +1,7 @@
 function showPhotographers() {
   const urlParams = new URLSearchParams(window.location.search);
   const tagParam = urlParams.get("tag");
-  console.log("coucou", tagParam);
+  console.log(tagParam);
   fetch("/FishEyeDataFR.json")
     .then((response) => {
       if (!response.ok) {
@@ -29,9 +29,9 @@ function setPhotographersHTML(photographers) {
   photographers.forEach((element) => {
     let photographHTML = `
         <article class="d-flex column">
-          <figure class="profil-pic"><a href="/pages/photograph.html"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/${element.portrait}" alt="Profil de Kimi Keel" /></a></figure>
+          <figure class="profil-pic"><a href="/pages/photograph.html?id=${element.id}"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/${element.portrait}" alt="Profil de Kimi Keel" /></a></figure>
           <div class="d-flex column profil-description">
-            <h2><a href="/pages/photograph.html">${element.name}</a></h2>
+            <h2><a href="/pages/photograph.html?id=${element.id}">${element.name}</a></h2>
             <h3>${element.city},  ${element.country}</h3>
             <p>${element.tagline}</p>
             <p class="price">${element.price}€/jour</p>

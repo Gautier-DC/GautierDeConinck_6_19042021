@@ -16,6 +16,7 @@
     @include desktop {
       height: 200px;
       justify-content: space-between;
+      padding: 0em 2.5em;
     }
     h1 {
       font-weight: lighter;
@@ -55,7 +56,7 @@
     margin-left: -80.3px;
     @include desktop {
       position: relative;
-      left: 8em;
+      left: 4em;
       bottom: 0;
       top: 1.5em;
     }
