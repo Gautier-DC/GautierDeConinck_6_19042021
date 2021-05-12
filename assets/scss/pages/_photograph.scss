@@ -46,6 +46,26 @@
       }
     }
   }
+  #likes-price {
+    @include static-block;
+    bottom: -1em;
+    right: 3%;
+    height: 89px;
+    width: 376px;
+    padding-top: 1em;
+    border-radius: 0.5em 0.5em 0 0;
+    font-size: map-get($font-size , location);
+    font-weight: lighter;
+    justify-content: space-between;
+    align-items: center;
+    #likes {
+      text-align: left;
+      margin-right: 2em;
+    }
+    #price {
+      text-align: right;
+    }
+  }
 
   .open-modal-btn {
     @include button;
@@ -119,11 +139,15 @@
 }
 
 #gallery {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 2.5em;
   @include desktop {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
     justify-content: space-between;
-    flex-wrap: wrap;
+    grid-gap: 20px;  
   }
   .picture-card {
     height: 218px;
@@ -148,6 +172,12 @@
         object-fit: cover;
         border-radius: 0.5em;
       }
+      video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0.5em;
+      }
     }
   }
 }
@@ -157,12 +187,11 @@
   align-items: center;
   color: $color-primary;
   @include desktop {
-    font-size: map-get($font-size, location);
+    font-size: map-get($font-size, body);
     padding-bottom: 0.4em;
   }
   h3 {
     font-weight: lighter;
-    font-size: map-get($font-size, body);
     flex-grow: 1;
   }
   .heart {

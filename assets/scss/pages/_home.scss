@@ -1,20 +1,10 @@
 @import "../main.scss";
 
-#gotop {
-  background-color: lighten($color-secondary, 20%);
-  padding: 0.4em 0.8em;
-  border-radius: 0.5em;
-  font-weight: bold;
-  text-align: center;
-  position: fixed;
+#skiplink {
+  @include static-block;
   top: 1em;
   left: 50%;
   margin-left: -140px;
-  order: 99;
-  display: none;
-  @include desktop {
-    display: block;
-  }
 }
 
 .photographers-list {
