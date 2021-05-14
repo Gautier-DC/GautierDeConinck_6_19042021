@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Trouvez votre photographe en un clic avec Fisheye !" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/399e6dfa69.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/dist/css/photograph.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
@@ -39,21 +40,7 @@
           <div id="option-wrapper">
             <button aria-haspopup="listbox" aria-labelledby="filters-options filters-button" aria-expanded="false" id="filters-button">
               Popularité
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="chevron-right"
-                id="chevron"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 320 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                />
-              </svg>
+              <i class="fas fa-chevron-right" id="chevron"></i>
             </button>
             <ul id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
               <li id="filters-options-popularity" aria-selected="true" role="option">Popularité</li>
@@ -93,6 +80,15 @@
         </figure>
         -->
       </section>
+
+      <!--<div class="lightbox">
+        <button class="lightbox__close"><i class="fas fa-times"></i></button>
+        <button class="lightbox__next"><i class="fas fa-chevron-right"></i></button>
+        <button class="lightbox__prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox__container d-flex row">
+          <img src="/assets/img/Sample_Photos/Mimi/Event_PintoWedding.jpg" alt="">
+        </div>
+      </div>-->
     </main>
     <script src="/assets/dist/js/photograph.js"></script>
   </body>

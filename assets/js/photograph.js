@@ -1,3 +1,4 @@
+import Lightbox from './lightbox.js'
 //Global function to display page of the photographer
 const showPhotographerProfil = () => {
   // Get the right url and inject the id parameter
@@ -5,7 +6,7 @@ const showPhotographerProfil = () => {
   const idParam = urlParams.get("id");
   // Find the .json file
   fetch("/FishEyeDataFR.json")
-  //promise for the response (here data)
+    //promise for the response (here data)
     .then((response) => {
       // Display an error if note find or convert data in json
       if (!response.ok) {
@@ -25,7 +26,7 @@ const showPhotographerProfil = () => {
       // Set the html of the profil
       setProfilHTML(filteredPhotographer);
       let filteredMedia;
-      // If there is the id parameters, then find media which has a common id 
+      // If there is the id parameters, then find media which has a common id
       if (idParam) {
         filteredMedia = data.media.filter((media) => media.photographerId == filteredPhotographer.id);
       } else {
@@ -33,11 +34,12 @@ const showPhotographerProfil = () => {
       }
       // Set the gallery part
       displayGallery(filteredMedia, filteredPhotographer.name.split(" ")[0]);
+      Lightbox.init()
     })
     .catch(function (error) {
       console.log("error", error);
     });
-}
+};
 // Use the function define previously
 showPhotographerProfil();
 
@@ -65,7 +67,7 @@ const setProfilHTML = (photographer) => {
         </p>`;
   // Inject the previous HTML in banner-container part
   document.getElementById("banner-container").insertAdjacentHTML("beforeend", profilHTML);
-}
+};
 
 // Function in order to display the right gallery of media, corresponding to the called photographer
 const displayGallery = (media, folderName) => {
@@ -74,7 +76,7 @@ const displayGallery = (media, folderName) => {
     if (elt.image) {
       mediaHTML = `
       <figure class="picture-card d-flex column">
-            <a href="#"
+            <a href="../assets/img/Sample_Photos/${folderName}/${elt.image}"
               ><img
                 src="../assets/img/Sample_Photos/${folderName}/${elt.image}"
                 alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
@@ -105,13 +107,13 @@ const displayGallery = (media, folderName) => {
       let videoName = elt.video.split(".")[0];
       //Create html of the media
       mediaHTML = `<figure class="picture-card d-flex column">
-      <a href="#"
+      <a href="../assets/img/Sample_Photos/${folderName}/${videoName}"
       ><video controls preload width="250">
-        <source src=../assets/img/Sample_Photos/${folderName}/` + videoName + `.mp4
+        <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.mp4
               type="video/mp4">
-        <source src=../assets/img/Sample_Photos/${folderName}/` + videoName + `.ogv
+        <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.ogv
               type="video/ogg">
-        <source src=../assets/img/Sample_Photos/${folderName}/` + videoName + `.webm
+        <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.webm
               type="video/webm">
         Sorry, your browser doesn't support embedded videos.
         </video></a>
@@ -138,9 +140,11 @@ const displayGallery = (media, folderName) => {
         `;
     } else {
       // error message
-      mediaHTML = `<p id="errorMedia">Sorry we didn't find anything for this photographer</p>`
+      mediaHTML = `<p id="errorMedia">Sorry we didn't find anything for this photographer</p>`;
     }
     // Add it to gallery section
     document.getElementById("gallery").insertAdjacentHTML("beforeend", mediaHTML);
   });
-}
+};
+
+
