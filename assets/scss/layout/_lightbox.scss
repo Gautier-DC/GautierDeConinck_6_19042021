@@ -1,0 +1,74 @@
+@import "../components/animations";
+.hidden{
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+  animation: lightboxIn 0.5s;
+  transition: opacity 0.5s;
+  &__container {
+    margin: 0em 6em;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    img, video {
+      max-width: 100%;
+      max-height: 85%;
+      border-radius: 0.3em;
+      @include shadow;
+      animation: lightboxIn 1s;
+    }
+    h3{
+      margin-top: 1em;
+      font-weight: lighter;
+    }
+  }
+  &.fadeOut{
+    opacity: 0;
+  }
+}
+
+.lightbox__next,
+.lightbox__prev {
+  top: 0;
+  right: 0;
+  z-index: 11;
+  height: 100%;
+  width: 6em;
+  cursor: pointer;
+}
+
+.lightbox__prev {
+  right: auto;
+  left: 0;
+}
+
+.lightbox__close {
+  top: 70px;
+  right: 0;
+  width: 6em;
+  z-index: 12;
+}
+
+.lightbox button {
+  background: none;
+  color: $color-primary;
+  border: none;
+  position: fixed;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 1;
+  }
+  i {
+    font-size: 2em;
+  }
+}

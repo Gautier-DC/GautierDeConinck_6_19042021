@@ -108,6 +108,15 @@
     margin-top: 0.7em;
     margin-right: 1em;
   }
+  #option-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .open #filters-options-list{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   [role="listbox"] {
     @include button;
     position: absolute;
@@ -132,9 +141,18 @@
     height: 1px;
     background-color: #fff;
   }
+  &-button{
+    display: flex;
+    align-items: center;
+  }
   #chevron {
+    position: relative;
     width: 0.6em;
+    line-height: 100%;
     margin-left: 0.5em;
+    .open{
+      transform: rotate(45deg);
+    }
   }
 }
 

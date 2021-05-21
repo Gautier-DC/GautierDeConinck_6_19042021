@@ -17,7 +17,6 @@
     "postcss-loader": "^5.0.0",
     "sass-loader": "^11.0.0",
     "webpack": "^5.27.2",
-    "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
   },
   "repository": {
@@ -31,6 +30,7 @@
   },
   "homepage": "https://github.com/Gautier-DC/GautierDeConinck_6_19042021#readme",
   "devDependencies": {
-    "eslint": "^7.26.0"
+    "eslint": "^7.26.0",
+    "webpack-cli": "^4.7.0"
   }
 }
