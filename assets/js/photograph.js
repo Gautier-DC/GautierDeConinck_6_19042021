@@ -1,4 +1,4 @@
-import Lightbox from './lightbox.js'
+import {Lightbox} from './lightbox.js'
 //Global function to display page of the photographer
 const showPhotographerProfil = () => {
   // Get the right url and inject the id parameter
@@ -34,7 +34,7 @@ const showPhotographerProfil = () => {
       }
       // Set the gallery part
       displayGallery(filteredMedia, filteredPhotographer.name.split(" ")[0]);
-      Lightbox.init()
+      Lightbox(filteredMedia)
     })
     .catch(function (error) {
       console.log("error", error);
@@ -57,7 +57,7 @@ const setProfilHTML = (photographer) => {
   });
   profilHTML += `</ul>
       </div>
-      <button class="open-modal-btn">Contactez-moi</button>
+      <button class="open-modal-btn"><a href="#modal-photographer" class="js-modal">Contactez-moi</a></button>
       <figure class="profil-pic">
           <img src="/assets/img/Sample_Photos/Photographers_ID_Photos/${photographer.portrait}" alt="" />
         </figure>
@@ -76,10 +76,11 @@ const displayGallery = (media, folderName) => {
     if (elt.image) {
       mediaHTML = `
       <figure class="picture-card d-flex column">
-            <a href="../assets/img/Sample_Photos/${folderName}/${elt.image}"
+            <a href="../assets/img/Sample_Photos/${folderName}/${elt.image} " class="jsMedia"
               ><img
-                src="../assets/img/Sample_Photos/${folderName}/${elt.image}"
+                src="../assets/img/Sample_Photos/${folderName}/${elt.image} "
                 alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+                
             /></a>
             <div class="picture-description d-flex row">
               <h3 id="picture-name">${elt.title}</h3>
@@ -107,8 +108,8 @@ const displayGallery = (media, folderName) => {
       let videoName = elt.video.split(".")[0];
       //Create html of the media
       mediaHTML = `<figure class="picture-card d-flex column">
-      <a href="../assets/img/Sample_Photos/${folderName}/${videoName}"
-      ><video controls preload width="250">
+      <a data-folderName="${folderName}" data-videoName="${videoName}" data-mediaType="video" class="jsMedia" href="../assets/img/Sample_Photos/${folderName}/${videoName}.mp4 "
+      ><video width="250" >
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.mp4
               type="video/mp4">
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.ogv
@@ -146,5 +147,4 @@ const displayGallery = (media, folderName) => {
     document.getElementById("gallery").insertAdjacentHTML("beforeend", mediaHTML);
   });
 };
-
 
