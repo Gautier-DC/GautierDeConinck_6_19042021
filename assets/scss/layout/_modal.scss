@@ -1,0 +1,88 @@
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.5);
+  .modal-wrapper {
+    overflow: auto;
+    width: 600px;
+    max-width: calc(100vh - 5%);
+    height: calc(100vh - 10%);
+    padding: 1.5em;
+    background-color: lighten($color-secondary, 20%);
+    box-shadow: 0 10px 15px rgba($color: #000000, $alpha: 0.5);
+    animation-name: modalopen;
+    animation-duration: $modal-duration;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    h1 {
+      margin-top: 0;
+      font-size: map-get($font-size, heading);
+      font-weight: lighter;
+      display: flex;
+      justify-content: space-between;
+    }
+    .close-btn {
+      color: #fff;
+      font-size: map-get($font-size, heading);
+      background: none;
+      cursor: pointer;
+      text-align: right;
+      flex-basis: 25%;
+    }
+    label {
+      font-size: 1.7em;
+      color: #312e2e;
+    }
+    .text-control {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      width: 100%;
+      border: none;
+      border-radius: 0.2em;
+      height: 60px;
+    }
+    #message {
+      box-sizing: border-box;
+    }
+    .btn-submit {
+      background-color: $color-primary;
+      border: none;
+      cursor: pointer;
+      border-radius: 0.2em;
+      padding: 1em 2em;
+      margin-top: 1em;
+      color: #fff;
+    }
+  }
+}
+
+.error {
+  font-size: 0.7em;
+  color: $color-primary;
+  margin-top: 0.3em;
+}
+
+.error--bg {
+  border: 2px solid $color-primary !important;
+}
+
+.message-sended {
+  font-size: 1.5em;
+  color: $color-primary;
+  padding: 1em 2em;
+  min-height: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation-name: modalopen;
+  animation-duration: $modal-duration;
+}
