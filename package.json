@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
-    "css-loader": "^5.0.2",
+    "css-loader": "^5.2.4",
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.5",
