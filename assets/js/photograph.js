@@ -1,4 +1,5 @@
 import {Lightbox} from './lightbox.js'
+import {setModal} from './modal.js'
 //Global function to display page of the photographer
 const showPhotographerProfil = () => {
   // Get the right url and inject the id parameter
@@ -32,8 +33,11 @@ const showPhotographerProfil = () => {
       } else {
         console.log("No media found");
       }
+      // Set modal
+      setModal();
       // Set the gallery part
       displayGallery(filteredMedia, filteredPhotographer.name.split(" ")[0]);
+      // Set the lightbox
       Lightbox(filteredMedia)
     })
     .catch(function (error) {
@@ -67,6 +71,8 @@ const setProfilHTML = (photographer) => {
         </p>`;
   // Inject the previous HTML in banner-container part
   document.getElementById("banner-container").insertAdjacentHTML("beforeend", profilHTML);
+  // Add photographer's name in contact form
+  document.querySelector("#titlemodal").innerHTML = `Contactez-moi </br> ${photographer.name}`;
 };
 
 // Function in order to display the right gallery of media, corresponding to the called photographer
