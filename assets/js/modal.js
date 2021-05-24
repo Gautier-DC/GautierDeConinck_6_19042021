@@ -7,6 +7,7 @@ export const setModal = () => {
   let formContact = document.forms["contact"];
   let valmessage = document.createElement('p');
   let buttonClose = document.createElement("button");
+  
 
   // Launch modal form
   const launchModal = () => {
@@ -33,10 +34,8 @@ export const setModal = () => {
   //function check if it's empty
   function nameCheked(value) {
     value = value.trim();
-    if (value != "" && value.length > 2 && value != null) {
+    if (value != "" && value.length > 2 && value != null && /\d/.test(value) == false) {
       return true;
-    } else if (/\d/.test(value)) {
-      return false;
     } else {
       return false;
     }
@@ -61,7 +60,8 @@ export const setModal = () => {
   };
 
   // Validation of the formular
-  const validate = () => {
+  const validate = (e) => {
+    e.preventDefault();
     let isErrors = false;
     let firstName = formContact["firstName"];
     let lastName = formContact["lastName"];
@@ -83,17 +83,17 @@ export const setModal = () => {
       email.classList.add("error--bg");
       email.insertAdjacentElement("afterend", createErrorSpan("Veuillez entrer une adresse mail valide."));
     }
-    if (isErrors == true) {
-      return false;
-    } else {
+    else {
       formContact.style.display = 'none';
-      modalWrapper.classList.add('message-sended');
+      modalWrapper.classList.add('message-sended','d-flex', 'column');
+      valmessage.classList.add('mess');
       valmessage.innerHTML='Merci, votre formulaire a bien été envoyé !';
       modalWrapper.append(valmessage);
-      buttonClose.innerHTML = `<i class="fas fa-times close-btn"></i>`;
+      buttonClose.innerHTML = `Fermer`;
       modalWrapper.appendChild(buttonClose);
+      buttonClose.classList.add('btn-close');
       buttonClose.addEventListener ("click", closeModal);
-      return false;    
     }
   };
+  formContact.addEventListener('submit', validate);
 };

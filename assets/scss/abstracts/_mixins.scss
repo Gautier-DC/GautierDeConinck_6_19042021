@@ -43,3 +43,13 @@
       display: block;
     }
   }
+
+  @mixin btn {
+    background-color: $color-primary;
+      border: none;
+      cursor: pointer;
+      border-radius: 0.2em;
+      padding: 1em 2em;
+      margin-top: 1em;
+      color: #fff;
+}

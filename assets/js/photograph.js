@@ -71,6 +71,8 @@ const setProfilHTML = (photographer) => {
         </p>`;
   // Inject the previous HTML in banner-container part
   document.getElementById("banner-container").insertAdjacentHTML("beforeend", profilHTML);
+  // Add photographer's name in contact form
+  document.querySelector("#titlemodal").innerHTML = `Contactez-moi </br> ${photographer.name}`;
 };
 
 // Function in order to display the right gallery of media, corresponding to the called photographer
