@@ -34,7 +34,7 @@ export const setModal = () => {
   //function check if it's empty
   function nameCheked(value) {
     value = value.trim();
-    if (value != "" && value.length > 2 && value != null && /\d/.test(value) == false) {
+    if (value != "" && value.length > 2 && /\d/.test(value) == false) {
       return true;
     } else {
       return false;

@@ -34,7 +34,7 @@ const showPhotographerProfil = () => {
         console.log("No media found");
       }
       // Set modal
-      setModal(filteredPhotographer);
+      setModal();
       // Set the gallery part
       displayGallery(filteredMedia, filteredPhotographer.name.split(" ")[0]);
       // Set the lightbox
