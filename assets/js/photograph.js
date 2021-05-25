@@ -37,6 +37,8 @@ const showPhotographerProfil = () => {
       setModal();
       // Set the gallery part
       displayGallery(filteredMedia, filteredPhotographer.name.split(" ")[0]);
+      // 
+      sortMedia()
       // Set the lightbox
       Lightbox(filteredMedia)
     })
@@ -153,4 +155,36 @@ const displayGallery = (media, folderName) => {
     document.getElementById("gallery").insertAdjacentHTML("beforeend", mediaHTML);
   });
 };
+
+// Deploy filters menu
+document.querySelector('#filters').addEventListener('click', function() {
+  this.querySelector('.option-wrapper').classList.toggle('open');
+  this.querySelector('.filters-options-list').classList.toggle('open');
+})
+
+// Replace text in the button
+for (const option of document.querySelectorAll(".option")) {
+  option.addEventListener('click', function() {
+      if (!this.classList.contains('selected')) {
+          this.parentNode.querySelector('.option.selected').classList.remove('selected');
+          this.classList.add('selected');
+          this.closest('.option-wrapper').querySelector('button span').textContent = this.textContent;
+      }
+  })
+}
+
+// Close filters if there is a click outside
+window.addEventListener('click', function(e) {
+  const select = document.querySelector('.option-wrapper')
+  if (!select.contains(e.target)) {
+      select.classList.remove('open');
+  }
+});
+
+const sortMedia = () =>{
+  console.log(filteredMedia);
+}
+
+
+
 

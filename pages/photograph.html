@@ -37,15 +37,15 @@
       <section class="filters d-flex row" id="filters">
         <div class="left-area d-flex row">
           <span id="filters-options"> Trier par </span>
-          <div id="option-wrapper">
+          <div id="option-wrapper" class="option-wrapper">
             <button aria-haspopup="listbox" aria-labelledby="filters-options filters-button" aria-expanded="false" id="filters-button">
-              Popularité
-              <i class="fas fa-chevron-right" id="chevron"></i>
+              <span>Popularité</span>
+              <div class="arrow"></div>
             </button>
-            <ul id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
-              <li id="filters-options-popularity" aria-selected="true" role="option">Popularité</li>
-              <li id="filters-options-date" aria-selected="false" role="option">Date</li>
-              <li id="filters-options-title" aria-selected="false" role="option">Titre</li>
+            <ul class="filters-options-list" id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
+              <li id="filters-options-popularity" class="option selected" aria-selected="true" role="option">Popularité</li>
+              <li id="filters-options-date" class="option" aria-selected="false" role="option">Date</li>
+              <li id="filters-options-title" class="option" aria-selected="false" role="option">Titre</li>
             </ul>
           </div>
         </div>
