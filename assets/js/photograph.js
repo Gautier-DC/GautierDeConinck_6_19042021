@@ -67,7 +67,7 @@ const setProfilHTML = (photographer) => {
           <img src="/assets/img/Sample_Photos/Photographers_ID_Photos/${photographer.portrait}" alt="" />
         </figure>
         <p class ="d-flex row" id="likes-price">
-        <span id="likes">297 081 ♥</span>
+        <span id="total-likes"></span>
         <span id="price">${photographer.price}€ / jour</span>
         </p>`;
   // Inject the previous HTML in banner-container part
@@ -79,7 +79,9 @@ const setProfilHTML = (photographer) => {
 // Function in order to display the right gallery of media, corresponding to the called photographer
 const displayGallery = (media, folderName) => {
   document.getElementById("gallery").innerHTML = "";
-  media.forEach((elt) => {
+  let totalLikes = 0;
+  media.forEach((elt, i) => {
+    totalLikes += elt.likes;
     let mediaHTML;
     if (elt.image) {
       mediaHTML = `
@@ -92,7 +94,7 @@ const displayGallery = (media, folderName) => {
             /></a>
             <div class="picture-description d-flex row">
               <h3 id="picture-name">${elt.title}</h3>
-              <p>${elt.likes}</p>
+              <p class="counter-like">${elt.likes}</p>
               <svg
                 aria-hidden="true"
                 class="heart"
@@ -128,7 +130,7 @@ const displayGallery = (media, folderName) => {
         </video></a>
         <div class="picture-description d-flex row">
           <h3 id="picture-name">${elt.title}</h3>
-          <p>${elt.likes}</p>
+          <p class="counter-like">${elt.likes}</p>
           <svg
             aria-hidden="true"
             class="heart"
@@ -153,7 +155,17 @@ const displayGallery = (media, folderName) => {
     }
     // Add it to gallery section
     document.getElementById("gallery").insertAdjacentHTML("beforeend", mediaHTML);
+    // Animation for the like button on each media
+    const heart = document.getElementsByClassName('heart')[i]
+    heart.addEventListener( 'click',  function likeButton(){
+      let counterLike = document.getElementsByClassName('counter-like')[i];
+      elt.likes++;
+      counterLike.innerHTML = elt.likes;
+      totalLikes++;
+      document.getElementById('total-likes').innerHTML = totalLikes + " ♥";
+    });
   });
+  document.getElementById('total-likes').innerHTML = totalLikes + " ♥";
 };
 
 // Deploy filters menu
@@ -222,3 +234,5 @@ const orderByTitle = (e, filteredMedia) => {
 const orderByPop = (e, filteredMedia) => {
   return filteredMedia.sort((a, b) => b.likes - a.likes);
 };
+
+
