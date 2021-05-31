@@ -155,9 +155,19 @@
   .heart {
     width: 1em;
     fill: $color-primary;
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover{
+        opacity: 1;
+        transition: all 0.3s;
+    }
   }
   p {
     margin-right: 0.3em;
     text-align: right;
   }
+}
+
+.like-anim {
+  animation: heartbeat ease forwards;
 }
