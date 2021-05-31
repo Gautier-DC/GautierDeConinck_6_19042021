@@ -30,6 +30,12 @@ export const setModal = () => {
 
   // Modal close event
   closeBtn.addEventListener("click", closeModal);
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeModal();
+    }
+  })
 
   //function check if it's empty
   function nameCheked(value) {

@@ -1,0 +1,107 @@
+#filters {
+  display: none;
+  @include desktop {
+    display: block;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &-options {
+    font-weight: bolder;
+    margin-top: 0.7em;
+    margin-right: 1em;
+  }
+  .option-wrapper {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    .open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+  }
+  #filters-button {
+    @include button;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .filters-options-list {
+    @include button;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    pointer-events: none;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    .open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+  }
+  .option {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-secondary;
+    }
+  }
+  li:nth-child(1)::after,
+  li:nth-child(2)::after {
+    content: "";
+    width: 95%;
+    margin: 0.5em 0;
+    display: block;
+    top: 10px;
+    height: 1px;
+    background-color: #fff;
+  }
+  &-button {
+    display: flex;
+    align-items: center;
+  }
+}
+/*Arrow section*/
+.arrow {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  z-index: 2;
+}
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow::before {
+  left: -5px;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+.arrow::after {
+  left: 5px;
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+.open .arrow::before {
+  left: -5px;
+  transform: rotate(-45deg);
+}
+.open .arrow::after {
+  left: 5px;
+  transform: rotate(45deg);
+}
