@@ -1,5 +1,11 @@
 export const Lightbox = () => {
   // Create lightbox
+  let prevLightbox = document.getElementsByClassName('lightbox');
+  // Remove any lightbox div that already exist
+  if(prevLightbox.length > 0) {
+    prevLightbox[0].remove();
+  }
+  // Set lightbox basics
   let currentMediaIndex;
   const lightboxDiv = document.createElement("div");
   lightboxDiv.classList.add("lightbox", "hidden");
@@ -11,7 +17,7 @@ export const Lightbox = () => {
   </div>`;
   
 
-  // Close the lightbox
+  // Close the lightbox on click and with escape
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       e.preventDefault();
@@ -38,6 +44,7 @@ export const Lightbox = () => {
     }
   };
 
+  // Navigate with keyboard or inner arrows
   window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") {
       handleNext(e);
@@ -61,6 +68,7 @@ export const Lightbox = () => {
     }
   };
 
+  // navigate with keyboard or inner arrows
   window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
       handlePrev(e);
@@ -74,16 +82,16 @@ export const Lightbox = () => {
   const setLightboxContent = (currentMedia) => {
     if (currentMedia.dataset.mediatype === "video") {
       document.querySelector(".lightbox__container").innerHTML = `
-          <video controls>
-          <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.mp4
-                type="video/mp4">
-          <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.ogv
-                type="video/ogg">
-          <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.webm
-                type="video/webm">
-          Sorry, your browser doesn't support embedded videos.
-          </video>
-          <h3 class="picture-description" id="picture-name">` + currentMedia.href.split('/')[7].replace(/_/g, ' ').slice(0, -4) + `</h3>`;
+      <video controls>
+      <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.mp4
+      type="video/mp4">
+      <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.ogv
+      type="video/ogg">
+      <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.webm
+      type="video/webm">
+      Sorry, your browser doesn't support embedded videos.
+      </video>
+      <h3 class="picture-description" id="picture-name">` + currentMedia.href.split('/')[7].replace(/_/g, ' ').slice(0, -4) + `</h3>`;
     } else {
       document.querySelector(".lightbox__container").innerHTML = `
       <img src="${currentMedia.href}" alt="">
@@ -93,13 +101,14 @@ export const Lightbox = () => {
 
   // Get the media
   const medias = Array.from(document.querySelectorAll(".jsMedia"));
-    
+  
   // Once you have the media create html for it
   for (let i = 0 ; i < medias.length ; i++ ) {
     medias[i].addEventListener("click", (e) => {
+      console.log('hello', medias[i])
       e.preventDefault();
       lightboxDiv.classList.remove("hidden");
-      currentMediaIndex = i
+      currentMediaIndex = i;
       setLightboxContent(medias[currentMediaIndex]);
     });
   }

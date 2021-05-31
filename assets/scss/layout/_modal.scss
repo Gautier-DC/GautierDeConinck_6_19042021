@@ -1,0 +1,120 @@
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.5);
+  .modal-wrapper {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    background-color: lighten($color-secondary, 20%);
+    box-shadow: 0 10px 15px rgba($color: #000000, $alpha: 0.5);
+    animation-name: modalopen;
+    animation-duration: $modal-duration;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include desktop{
+      max-width: calc(100vh - 5%);
+      height: calc(100vh - 10%);
+      width: 670px;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: lighter;
+      flex-basis: 75%;
+      font-size: map-get($font-size, profil-name);
+      line-height: 2.6rem;
+      @include desktop{
+        font-size: map-get($font-size, heading);
+        line-height: 3.5rem;
+      }
+    }
+    .close-btn {
+      color: #fff;
+      font-size: map-get($font-size, form-label);
+      background: none;
+      cursor: pointer;
+      text-align: right;
+      flex-basis: 25%;
+      @include desktop{
+        font-size: map-get($font-size, heading);
+      }
+    }
+    label {
+      color: #312e2e;
+      font-size: map-get($font-size, location);
+      @include desktop{
+        font-size: map-get($font-size, form-label);
+      }
+    }
+    .text-control {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      width: 100%;
+      border: none;
+      border-radius: 0.2em;
+      height: 50px;
+      @include desktop{
+        height: 60px;
+      }
+    }
+    #message {
+      box-sizing: border-box;
+      height: 20vh;
+      @include desktop{
+      }
+    }
+    .btn-submit {
+      @include btn;
+      width: 100%;
+      @include desktop{
+        width: 30%;
+      }
+    }
+  }
+}
+
+.error {
+  font-size: 0.7em;
+  color: $color-primary;
+  margin-top: 0.3em;
+}
+
+.error--bg {
+  border: 2px solid $color-primary !important;
+}
+
+.message-sended {
+  font-size: 3em;
+  color: $color-primary;
+  padding: 1em 2em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  animation-name: modalopen;
+  animation-duration: $modal-duration;
+  .mess{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+  }
+  .btn-close{
+    @include btn;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+}

@@ -96,66 +96,6 @@
   }
 }
 
-#filters {
-  display: none;
-  @include desktop {
-    display: block;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  &-options {
-    font-weight: bolder;
-    margin-top: 0.7em;
-    margin-right: 1em;
-  }
-  #option-wrapper{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    .open #filters-options-list{
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-  [role="listbox"] {
-    @include button;
-    position: absolute;
-    top: 46%;
-    left: 8.5%;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    line-height: 1.8em;
-  }
-  [role="option"] {
-    width: 100%;
-  }
-  li:nth-child(1)::after,
-  li:nth-child(2)::after {
-    content: "";
-    width: 95%;
-    margin: 0.5em 0;
-    display: block;
-    top: 10px;
-    height: 1px;
-    background-color: #fff;
-  }
-  &-button{
-    display: flex;
-    align-items: center;
-  }
-  #chevron {
-    position: relative;
-    width: 0.6em;
-    line-height: 100%;
-    margin-left: 0.5em;
-    .open{
-      transform: rotate(45deg);
-    }
-  }
-}
-
 #gallery {
   display: flex;
   flex-direction: column;
@@ -215,9 +155,19 @@
   .heart {
     width: 1em;
     fill: $color-primary;
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover{
+        opacity: 1;
+        transition: all 0.3s;
+    }
   }
   p {
     margin-right: 0.3em;
     text-align: right;
   }
+}
+
+.like-anim {
+  animation: heartbeat ease forwards;
 }
