@@ -37,15 +37,15 @@
       <section class="filters d-flex row" id="filters">
         <div class="left-area d-flex row">
           <span id="filters-options"> Trier par </span>
-          <div id="option-wrapper">
+          <div id="option-wrapper" class="option-wrapper">
             <button aria-haspopup="listbox" aria-labelledby="filters-options filters-button" aria-expanded="false" id="filters-button">
-              Popularité
-              <i class="fas fa-chevron-right" id="chevron"></i>
+              <span>Popularité</span>
+              <div class="arrow"></div>
             </button>
-            <ul id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
-              <li id="filters-options-popularity" aria-selected="true" role="option">Popularité</li>
-              <li id="filters-options-date" aria-selected="false" role="option">Date</li>
-              <li id="filters-options-title" aria-selected="false" role="option">Titre</li>
+            <ul class="filters-options-list" id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
+              <!--<li id="filters-options-popularity" class="option selected" aria-selected="true" role="option">Popularité</li>
+                <li id="filters-options-date" class="option" aria-selected="false" role="option">Date</li>
+                <li id="filters-options-title" class="option" aria-selected="false" role="option">Titre</li>-->
             </ul>
           </div>
         </div>
@@ -80,6 +80,38 @@
         </figure>
         -->
       </section>
+
+      <!--Modal -->
+
+<aside id="modal-photographer" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" >
+        <div class="modal-wrapper">
+          <form name="contact" action="index.html" autocomplete="off" method="get" onsubmit="validate();">
+            <div role="group" aria-labelledby="coordonnees">
+              <div class="d-flex row" id="modalHeader">
+                <h1 id="titlemodal">Contactez-moi Mimi Keel</h1>
+                <i class="fas fa-times close-btn"></i>
+              </div>
+                <div class="formData">
+                  <label for="firstName">Prénom</label><br />
+                  <input class="text-control" type="text" id="firstName" name="firstName" aria-required=true />
+                </div>
+                <div class="formData">
+                  <label for="lastName">Nom</label><br />
+                  <input class="text-control" type="text" id="lastName" name="lastName" aria-required=true />
+                </div>
+                <div class="formData">
+                  <label for="email">E-mail</label><br />
+                  <input class="text-control" id="email" name="email" aria-required=true />
+                </div>
+            </div>
+              <div class="formData">
+                <label for="message">Votre message</label><br />
+                <textarea class="text-control" id="message" name="message" placeholder="Indiquez quel est votre projet pour que le photographe puisse vous répondre plus facilement. "></textarea>
+              </div>
+              <input class="btn-submit" type="submit" value="Envoyer" />
+            </form>
+
+      </aside>
 
       <!--<div class="lightbox">
         <button class="lightbox__close"><i class="fas fa-times"></i></button>
