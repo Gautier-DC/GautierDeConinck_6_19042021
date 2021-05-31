@@ -1,5 +1,5 @@
-import {Lightbox} from './lightbox.js'
-import {setModal} from './modal.js'
+import { Lightbox } from "./lightbox.js";
+import { setModal } from "./modal.js";
 //Global function to display page of the photographer
 const showPhotographerProfil = () => {
   // Get the right url and inject the id parameter
@@ -30,6 +30,7 @@ const showPhotographerProfil = () => {
       // If there is the id parameters, then find media which has a common id
       if (idParam) {
         filteredMedia = data.media.filter((media) => media.photographerId == filteredPhotographer.id);
+        buildOptionsList(filteredMedia, filteredPhotographer.name.split(" ")[0]);
       } else {
         console.log("No media found");
       }
@@ -37,10 +38,8 @@ const showPhotographerProfil = () => {
       setModal();
       // Set the gallery part
       displayGallery(filteredMedia, filteredPhotographer.name.split(" ")[0]);
-      // 
-      sortMedia()
       // Set the lightbox
-      Lightbox(filteredMedia)
+      Lightbox();
     })
     .catch(function (error) {
       console.log("error", error);
@@ -79,6 +78,7 @@ const setProfilHTML = (photographer) => {
 
 // Function in order to display the right gallery of media, corresponding to the called photographer
 const displayGallery = (media, folderName) => {
+  document.getElementById("gallery").innerHTML = "";
   media.forEach((elt) => {
     let mediaHTML;
     if (elt.image) {
@@ -157,34 +157,68 @@ const displayGallery = (media, folderName) => {
 };
 
 // Deploy filters menu
-document.querySelector('#filters').addEventListener('click', function() {
-  this.querySelector('.option-wrapper').classList.toggle('open');
-  this.querySelector('.filters-options-list').classList.toggle('open');
-})
+document.querySelector("#filters").addEventListener("click", function () {
+  this.querySelector(".option-wrapper").classList.toggle("open");
+  this.querySelector(".filters-options-list").classList.toggle("open");
+});
 
-// Replace text in the button
-for (const option of document.querySelectorAll(".option")) {
-  option.addEventListener('click', function() {
-      if (!this.classList.contains('selected')) {
-          this.parentNode.querySelector('.option.selected').classList.remove('selected');
-          this.classList.add('selected');
-          this.closest('.option-wrapper').querySelector('button span').textContent = this.textContent;
-      }
-  })
-}
+// Use filters
+let filtersOptions = ["Popularité", "Date", "Titre"];
+// Construct ordering possibilities
+const buildOptionsList = (medias, photographerName, orderedOptions = filtersOptions) => {
+  document.getElementById("filters-options-list").innerHTML = "";
+  // Create each li element (options)
+  orderedOptions.forEach((elt) => {
+    let options = document.createElement("li");
+    options.setAttribute("id", "filters-options-" + elt);
+    options.classList.add("option");
+    options.setAttribute("aria-selected", "false");
+    options.setAttribute("role", "option");
+    options.innerHTML = `${elt}`;
+    document.getElementById("filters-options-list").append(options);
+    clickOnFilter(medias, photographerName, options, elt);
+  });
+};
+// Define filtering function on each button
+const clickOnFilter = (medias, photographerName, li, optionName) => {
+  li.addEventListener("click", (e) => {
+    let orderedMedia = medias;
+    if (optionName == "Date") {
+      orderedMedia = orderByDate(e, medias);
+      // Reorder the array to reorder option selection
+      filtersOptions = ["Date", "Popularité", "Titre"];
+    } else if (optionName == "Titre") {
+      orderedMedia = orderByTitle(e, medias);
+      filtersOptions = ["Titre", "Date", "Popularité"];
+    } else if (optionName == "Popularité") {
+      orderedMedia = orderByPop(e, medias);
+      filtersOptions = ["Popularité", "Date", "Titre"];
+    }
+    // Replace button inner text by the current applied filter
+    document.querySelector(".option-wrapper button span").textContent = optionName;
+    displayGallery(orderedMedia, photographerName);
+    Lightbox();
+    buildOptionsList(orderedMedia, photographerName);
+  });
+};
 
 // Close filters if there is a click outside
-window.addEventListener('click', function(e) {
-  const select = document.querySelector('.option-wrapper')
+window.addEventListener("click", function (e) {
+  const select = document.querySelector(".option-wrapper");
   if (!select.contains(e.target)) {
-      select.classList.remove('open');
+    select.classList.remove("open");
   }
 });
 
-const sortMedia = () =>{
-  console.log(filteredMedia);
-}
-
-
-
-
+// reorder media by date
+const orderByDate = (e, filteredMedia) => {
+  return filteredMedia.sort((a, b) => new Date(b.date) - new Date(a.date));
+};
+// reorder media by title
+const orderByTitle = (e, filteredMedia) => {
+  return filteredMedia.sort((a, b) => a.title.localeCompare(b.title));
+};
+// reorder media by popularity
+const orderByPop = (e, filteredMedia) => {
+  return filteredMedia.sort((a, b) => b.likes - a.likes);
+};
