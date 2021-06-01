@@ -66,10 +66,10 @@ const setProfilHTML = (photographer) => {
       <figure class="profil-pic">
           <img src="/assets/img/Sample_Photos/Photographers_ID_Photos/${photographer.portrait}" alt="" />
         </figure>
-        <p class ="d-flex row" id="likes-price">
+        <div class ="d-flex row" id="likes-price">
         <span id="total-likes"></span>
         <span id="price">${photographer.price}€ / jour</span>
-        </p>`;
+        </div>`;
   // Inject the previous HTML in banner-container part
   document.getElementById("banner-container").insertAdjacentHTML("beforeend", profilHTML);
   // Add photographer's name in contact form
@@ -89,7 +89,7 @@ const displayGallery = (media, folderName) => {
             <a href="../assets/img/Sample_Photos/${folderName}/${elt.image} " class="jsMedia"
               ><img
                 src="../assets/img/Sample_Photos/${folderName}/${elt.image} "
-                alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
+                alt="${elt.alt}"
                 
             /></a>
             <div class="picture-description d-flex row">
@@ -159,10 +159,19 @@ const displayGallery = (media, folderName) => {
     const heart = document.getElementsByClassName('heart')[i]
     heart.addEventListener( 'click',  function likeButton(){
       let counterLike = document.getElementsByClassName('counter-like')[i];
+      // Add +1 on media counter
       elt.likes++;
+      // Refresh likes of media counter
       counterLike.innerHTML = elt.likes;
+      // Add +1 on total counter
       totalLikes++;
+      // Refresh likes of media counter
       document.getElementById('total-likes').innerHTML = totalLikes + " ♥";
+      // Set animation of the heart
+      if( heart.classList.contains('like-anim') ) { 
+        heart.classList.remove('like-anim');
+      };
+      setTimeout(function () {heart.classList.add('like-anim')}, 50);
     });
   });
   document.getElementById('total-likes').innerHTML = totalLikes + " ♥";

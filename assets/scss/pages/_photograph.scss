@@ -47,23 +47,29 @@
     }
   }
   #likes-price {
-    @include static-block;
-    bottom: -1em;
-    right: 3%;
-    height: 89px;
-    width: 376px;
-    padding-top: 1em;
-    border-radius: 0.5em 0.5em 0 0;
-    font-size: map-get($font-size , location);
-    font-weight: lighter;
-    justify-content: space-between;
-    align-items: center;
-    #likes {
-      text-align: left;
-      margin-right: 2em;
-    }
-    #price {
-      text-align: right;
+    display: none;
+    @include desktop {
+      @include static-block;
+      padding-left: 2em;
+      padding-right: 2em;
+      bottom: -1em;
+      right: 3%;
+      height: 89px;
+      width: 376px;
+      padding-top: 1em;
+      border-radius: 0.5em 0.5em 0 0;
+      font-size: map-get($font-size, location);
+      font-weight: lighter;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      #total-likes {
+        text-align: left;
+        flex-grow: 1;
+      }
+      #price {
+        text-align: right;
+      }
     }
   }
 
@@ -105,7 +111,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 350px);
     justify-content: space-between;
-    grid-gap: 20px;  
+    grid-gap: 20px;
   }
   .picture-card {
     height: 218px;
@@ -157,9 +163,9 @@
     fill: $color-primary;
     cursor: pointer;
     opacity: 0.5;
-    &:hover{
-        opacity: 1;
-        transition: all 0.3s;
+    &:hover {
+      opacity: 1;
+      transition: all 0.3s;
     }
   }
   p {
@@ -169,5 +175,5 @@
 }
 
 .like-anim {
-  animation: heartbeat ease forwards;
+  animation: heartbeat 0.5s ease forwards;
 }

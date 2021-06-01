@@ -4,7 +4,10 @@
   @include static-block;
   top: 1em;
   left: 50%;
-  margin-left: -140px;
+  margin-left: -140px;  
+  @include desktop {
+    display: block;
+  }
 }
 
 .photographers-list {

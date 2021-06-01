@@ -94,7 +94,7 @@ export const Lightbox = () => {
       <h3 class="picture-description" id="picture-name">` + currentMedia.href.split('/')[7].replace(/_/g, ' ').slice(0, -4) + `</h3>`;
     } else {
       document.querySelector(".lightbox__container").innerHTML = `
-      <img src="${currentMedia.href}" alt="">
+      <img src="${currentMedia.href}" alt="${currentMedia.alt}">
       <h3 class="picture-description" id="picture-name">` + currentMedia.href.split('/')[7].replace(/_/g, ' ').slice(0, -4) + `</h3>`;
     }
   };

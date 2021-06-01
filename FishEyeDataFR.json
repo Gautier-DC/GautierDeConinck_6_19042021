@@ -8,7 +8,8 @@
       "tags": ["portrait", "events", "travel", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "MimiKeel.jpg"
+      "portrait": "MimiKeel.jpg",
+      "alt": "Portrait de Mimi Keel"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -18,7 +19,8 @@
       "tags": ["sports", "architecture"],
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-      "portrait": "EllieRoseWilkens.jpg"
+      "portrait": "EllieRoseWilkens.jpg",
+      "alt": "Portrait de Ellie-Rose Wilkens"
     },
     {
       "name": "Tracy Galindo",
@@ -28,7 +30,8 @@
       "tags": ["art", "fashion", "events"],
       "tagline": "Photographe freelance",
       "price": 500,
-      "portrait": "TracyGalindo.jpg"
+      "portrait": "TracyGalindo.jpg",
+      "alt": "Portrait de Tracy Galindo"
     },
     {
       "name": "Nabeel Bradford",
@@ -38,7 +41,8 @@
       "tags": ["travel", "portrait"],
       "tagline": "Toujours aller de l'avant",
       "price": 350,
-      "portrait": "NabeelBradford.jpg"
+      "portrait": "NabeelBradford.jpg",
+      "alt": "Portrait de Nabeel Bradford"
     },
     {
       "name": "Rhode Dubois",
@@ -48,7 +52,8 @@
       "tags": ["sport", "fashion", "events", "animals"],
       "tagline": "Je crée des souvenirs",
       "price": 275,
-      "portrait": "RhodeDubois.jpg"
+      "portrait": "RhodeDubois.jpg",
+      "alt": "Portrait de Rhode Dubois"
     },
     {
       "name": "Marcel Nikolic",
@@ -58,7 +63,8 @@
       "tags": ["travel", "architecture"],
       "tagline": "Toujours à la recherche de LA photo",
       "price": 300,
-      "portrait": "MarcelNikolic.jpg"
+      "portrait": "MarcelNikolic.jpg",
+      "alt": "Portrait de Marcel Nikolic"
     }
   ],
   "media": [
@@ -70,7 +76,8 @@
       "tags": ["fashion"],
       "likes": 62,
       "date": "2011-12-08",
-      "price": 55
+      "price": 55,
+      "alt": "Jeune femme brune en tenue Sportswear entièrement jaune avec un crop-top sur un terrain de basket en bord de mer."
     },
     {
       "id": 8520927,
@@ -80,7 +87,8 @@
       "tags": ["fashion"],
       "likes": 11,
       "date": "2011-11-06",
-      "price": 55
+      "price": 55,
+      "alt": "Jeune femme blonde, en tenue estival à motif jungle, pose sur la route d'une grande ville."
     },
     {
       "id": 9025895,
@@ -90,7 +98,8 @@
       "tags": ["fashion"],
       "likes": 72,
       "date": "2013-08-12",
-      "price": 55
+      "price": 55,
+      "alt": "Jeune femme brune, en tenue de soirée à motif grosses rayures jaunes, noires et turquoise pose devant un fond à losange blanc et noir."
     },
     {
       "id": 9275938,
@@ -100,7 +109,8 @@
       "tags": ["events"],
       "likes": 69,
       "date": "2018-02-22",
-      "price": 55
+      "price": 55,
+      "alt": "Autel de mariage typique américain vide disposant d'une allée avec un tapis rose bordé de chaises menant à une petite coupole décorer avec des fleurs."
     },
     {
       "id": 2053494,
@@ -110,7 +120,8 @@
       "tags": ["events"],
       "likes": 2,
       "date": "2020-05-25",
-      "price": 55
+      "price": 55,
+      "alt": "Photo de soirée de mariage avec au premier plan les marriés de dos dans la pénombre et un arrière-plan flou avec les invités tenant des cierges magiques."
     },
     {
       "id": 7324238,
@@ -120,7 +131,8 @@
       "tags": ["events"],
       "likes": 33,
       "date": "2019-06-12",
-      "price": 55
+      "price": 55,
+      "alt": "Salle de réception d'anniversaire avec la table au premier plan flou et en arrière-plan des ballons flottants en forme de 18 couleur or."
     },
     {
       "id": 8328953,
@@ -130,7 +142,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2011-12-08",
-      "price": 100
+      "price": 100,
+      "alt": "Sculpture d'un cheval faites en lamelles de bois."
     },
     {
       "id": 7502053,
@@ -140,7 +153,8 @@
       "tags": ["art"],
       "likes": 88,
       "date": "2007-05-07",
-      "price": 55
+      "price": 55,
+      "alt": "Fresque murale artistique sur fond bleu d'un homme à moitié orange et à moitié turquoise regardant vers le ciel avec un triangle au contour blanc et à l'intérieur transparent au premier plan."
     },
     {
       "id": 8523492,
@@ -150,7 +164,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2018-05-05",
-      "price": 55
+      "price": 55,
+      "alt": "Tunnel sous-terrain à l'éclairage violet taggué des deux côtés."
     },
     {
       "id": 75902334,
@@ -160,7 +175,8 @@
       "tags": ["art"],
       "likes": 75,
       "date": "2019-11-25",
-      "price": 55
+      "price": 55,
+      "alt": "Peinture murale de têtes d'oiseau simpliste de couleur bleu et rouge regardant dans différentes directions."
     },
 
     {
@@ -171,7 +187,8 @@
       "tags": ["sport"],
       "likes": 52,
       "date": "2013-02-30",
-      "price": 70
+      "price": 70,
+      "alt": "Photo prise du dessus de rameurs sportifs en pleine action."
     },
     {
       "id": 92758372,
@@ -181,7 +198,8 @@
       "tags": ["fashion"],
       "likes": 58,
       "date": "2018-07-17",
-      "price": 70
+      "price": 70,
+      "alt": "Photo de couple d'un homme blanc en costume blanc cassé et d'une femme noire en tunique bleu ciel, s'entre-croisant et semblant déployer chacun une aile."
     },
     {
       "id": 32958383,
@@ -191,7 +209,8 @@
       "tags": ["fashion"],
       "likes": 11,
       "date": "2019-08-12",
-      "price": 70
+      "price": 70,
+      "alt": "Jeune femme avec des lunettes de soleil posant dans la rue. Elle descend un escalier avec une robe rouge."
     },
     {
       "id": 928587383,
@@ -201,7 +220,8 @@
       "tags": ["events"],
       "likes": 2,
       "date": "2019-01-02",
-      "price": 70
+      "price": 70,
+      "alt": "Réunion de travail d'une entreprise avec un mur de post-it."
     },
     {
       "id": 725639493,
@@ -211,7 +231,8 @@
       "tags": ["events"],
       "likes": 3,
       "date": "2019-05-20",
-      "price": 70
+      "price": 70,
+      "alt": "Réunion de travail ou un jeune homme semble faire un discours de présentation d'un produit."
     },
     {
       "id": 23394384,
@@ -221,7 +242,8 @@
       "tags": ["events"],
       "likes": 52,
       "date": "2019-07-18",
-      "price": 70
+      "price": 70,
+      "alt": "Photo de concert d'une pianiste utilisant un synthé sur scène."
     },
     {
       "id": 87367293,
@@ -231,7 +253,8 @@
       "tags": ["events"],
       "likes": 23,
       "date": "2018-02-22",
-      "price": 70
+      "price": 70,
+      "alt": "Photo de concert d'une chanteuse sur scène."
     },
     {
       "id": 593834784,
@@ -241,7 +264,8 @@
       "tags": ["animals"],
       "likes": 52,
       "date": "2017-03-13",
-      "price": 70
+      "price": 70,
+      "alt": "Un cerf en plein pied dans une forêt avec une lumière douce type fin de journée."
     },
     {
       "id": 83958935,
@@ -251,7 +275,8 @@
       "tags": ["animals"],
       "likes": 52,
       "date": "2016-06-12",
-      "price": 70
+      "price": 70,
+      "alt": "Vidéo d'un jeune chiot sur la plage jouant avec sa laisse ."
     },
 
     {
@@ -262,7 +287,8 @@
       "tags": ["travel"],
       "likes": 23,
       "date": "2017-03-18",
-      "price": 45
+      "price": 45,
+      "alt": "Vidéo tournée avec un drône de montagnes rocheuses."
     },
     {
       "id": 343423425,
@@ -272,7 +298,8 @@
       "tags": ["travel"],
       "likes": 101,
       "date": "2017-04-03",
-      "price": 45
+      "price": 45,
+      "alt": "Grande source chaude extérieur avec des baigneurs."
     },
     {
       "id": 73434243,
@@ -282,7 +309,8 @@
       "tags": ["travel"],
       "likes": 99,
       "date": "2018-04-30",
-      "price": 45
+      "price": 45,
+      "alt": "Photo d'ensemble d'une route type américaine sans circulation traversant des collines."
     },
     {
       "id": 23425523,
@@ -292,7 +320,8 @@
       "tags": ["travel"],
       "likes": 34,
       "date": "2016-04-05",
-      "price": 45
+      "price": 45,
+      "alt": "Nous somme placé à l'extrémité d'un pont étriqué en fer en plein milieu d'une forêt dense."
     },
     {
       "id": 23134513,
@@ -302,7 +331,8 @@
       "tags": ["travel"],
       "likes": 23,
       "date": "2017-03-18",
-      "price": 45
+      "price": 45,
+      "alt": "Photo prise depuis un petit bateau en bois naviguant sur une rivière au milieu de montagnes rocheuses boisées."
     },
     {
       "id": 92352352,
@@ -312,7 +342,8 @@
       "tags": ["portrait"],
       "likes": 66,
       "date": "2018-05-24",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait d'une jeune femme souriante aux cheveux roux et avec du rouge à lèvres rouge."
     },
     {
       "id": 34513453,
@@ -322,7 +353,8 @@
       "tags": ["portait"],
       "likes": 52,
       "date": "2017-04-21",
-      "price": 45
+      "price": 45,
+      "alt": "Photo en noir et blanc très contrasté d'un homme à l'air intrigué."
     },
     {
       "id": 23523533,
@@ -332,7 +364,8 @@
       "tags": ["portait"],
       "likes": 95,
       "date": "2018-11-02",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait en noir et blanc d'une jeune femme noire aux cheveux blancs qui nous regarde."
     },
     {
       "id": 525834234,
@@ -342,7 +375,8 @@
       "tags": ["portait"],
       "likes": 25,
       "date": "2019-01-02",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait en noir et blanc d'un homme agé nous regardant en train de fumé une cigarette adossé à un mur."
     },
 
     {
@@ -353,7 +387,8 @@
       "tags": ["travel"],
       "likes": 88,
       "date": "2019-02-03",
-      "price": 45
+      "price": 45,
+      "alt": "Photo d'ensemble d'un homme seul au milieu d'un paysage de montagne."
     },
     {
       "id": 625025343,
@@ -363,7 +398,8 @@
       "tags": ["travel"],
       "likes": 85,
       "date": "2019-04-03",
-      "price": 45
+      "price": 45,
+      "alt": "Des habitations très colorées au bords de rocheuses avec en contrebas des personnes qui se baignent."
     },
     {
       "id": 2525345343,
@@ -373,7 +409,8 @@
       "tags": ["portait"],
       "likes": 34,
       "date": "2019-04-07",
-      "price": 45
+      "price": 45,
+      "alt": "portrait noir et blanc d'une petite fille allongé sur le sol dans la rue et faisant une grimace en tirant sur son visage."
     },
     {
       "id": 2523434634,
@@ -383,7 +420,8 @@
       "tags": ["portait"],
       "likes": 63,
       "date": "2019-04-07",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait d'une jeune femme noire avec des lunettes, derrière une vitre avec une enseigne néon au-dessus d'elle."
     },
     {
       "id": 398847109,
@@ -393,7 +431,8 @@
       "tags": ["portait"],
       "likes": 55,
       "date": "2019-06-20",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait Noir et blanc d'une femme dont seul el visage est apparent. Elle nous fixe du regard."
     },
     {
       "id": 2534342,
@@ -403,7 +442,8 @@
       "tags": ["events"],
       "likes": 25,
       "date": "2019-06-21",
-      "price": 45
+      "price": 45,
+      "alt": "Une table de marriage préparée avec des serviettes rouges sur une plage."
     },
     {
       "id": 65235234,
@@ -413,7 +453,8 @@
       "tags": ["events"],
       "likes": 52,
       "date": "2019-06-25",
-      "price": 45
+      "price": 45,
+      "alt": "Couple de mariés front contre front entourés de rocher."
     },
     {
       "id": 23523434,
@@ -423,7 +464,8 @@
       "tags": ["events"],
       "likes": 77,
       "date": "2019-06-28",
-      "price": 45
+      "price": 45,
+      "alt": "Couple de mariés posant et se souriant l'un l'autre dans l'allée de leur lieu de mariage."
     },
     {
       "id": 5234343,
@@ -433,7 +475,8 @@
       "tags": ["animals"],
       "likes": 142,
       "date": "2019-08-23",
-      "price": 60
+      "price": 60,
+      "alt": "Troupeau de chevaux en mouvement dans les montagnes."
     },
     {
       "id": 95234343,
@@ -443,7 +486,8 @@
       "tags": ["animals"],
       "likes": 59,
       "date": "2019-07-02",
-      "price": 60
+      "price": 60,
+      "alt": "Petit oiseau multicolore posé sur une branche."
     },
 
     {
@@ -454,7 +498,8 @@
       "tags": ["travel"],
       "likes": 25,
       "date": "2019-04-03",
-      "price": 60
+      "price": 60,
+      "alt": "Deux femmes en yukata dans une ruelle de kyoto en début de soirée avec une pagode en arrière-plan."
     },
     {
       "id": 2523434,
@@ -464,7 +509,8 @@
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-05-06",
-      "price": 60
+      "price": 60,
+      "alt": "Photo d'un canal de la ville de venise avec une lumière couché de soleil."
     },
     {
       "id": 95293534,
@@ -474,7 +520,8 @@
       "tags": ["travel"],
       "likes": 33,
       "date": "2019-05-12",
-      "price": 60
+      "price": 60,
+      "alt": "Photo avec en arrière-plan une montagne aux rives boisées se refletant dans un lac au premier-plan."
     },
     {
       "id": 356234343,
@@ -484,7 +531,8 @@
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-06-20",
-      "price": 60
+      "price": 60,
+      "alt": "un vélo accroché à une rampe d'escalier sous un lampadaire dans une ruelle typique de la ville de Paris."
     },
     {
       "id": 235234343,
@@ -494,7 +542,8 @@
       "tags": ["travel"],
       "likes": 63,
       "date": "2019-06-26",
-      "price": 60
+      "price": 60,
+      "alt": "Une porte extérieur de style orientale avec au centre une ville en plongée."
     },
     {
       "id": 6234234343,
@@ -504,7 +553,8 @@
       "tags": ["architecture"],
       "likes": 52,
       "date": "2019-06-30",
-      "price": 60
+      "price": 60,
+      "alt": "Bâtiment de style cathédrale orthodoxe pris en contre-plongée depuis une rue de Saint-Petersburg."
     },
     {
       "id": 6525666253,
@@ -514,7 +564,8 @@
       "tags": ["architecture"],
       "likes": 63,
       "date": "2019-07-20",
-      "price": 60
+      "price": 60,
+      "alt": "Un village sur une colline au milieu des montagnes du tibet."
     },
     {
       "id": 98252523433,
@@ -524,7 +575,8 @@
       "tags": ["architecture"],
       "likes": 88,
       "date": "2020-01-05",
-      "price": 60
+      "price": 60,
+      "alt": "La tour de Pise en contre plongée avec une lumière de fin de journée."
     },
     {
       "id": 9259398453,
@@ -534,7 +586,8 @@
       "tags": ["architecture"],
       "likes": 57,
       "date": "2020-01-20",
-      "price": 65
+      "price": 65,
+      "alt": "Vidéo prise avec un drône d'un échangeur d'autoroute à Buenos Aires."
     },
     {
       "id": 3523523534,
@@ -544,7 +597,8 @@
       "tags": ["architecture"],
       "likes": 54,
       "date": "2020-05-05",
-      "price": 60
+      "price": 60,
+      "alt": "Un bâtiment en brique rouges avec des encadrures de fenêtres blanches situé à un coin. En arrière-plan un ciel bleu."
     },
 
     {
@@ -555,7 +609,8 @@
       "tags": ["sport"],
       "likes": 150,
       "date": "2018-02-30",
-      "price": 70
+      "price": 70,
+      "alt": "Une sportive de tissue aérien s'entraine à faire des figures."
     },
     {
       "id": 235234343,
@@ -565,7 +620,8 @@
       "tags": ["sport"],
       "likes": 101,
       "date": "2018-03-05",
-      "price": 65
+      "price": 65,
+      "alt": "Une escaladeuse en plein effort sur des rocheuses."
     },
     {
       "id": 235343222,
@@ -575,7 +631,8 @@
       "tags": ["sport"],
       "likes": 103,
       "date": "2018-03-10",
-      "price": 70
+      "price": 70,
+      "alt": "Un surfeur dans un tube d'eau."
     },
     {
       "id": 7775342343,
@@ -585,7 +642,8 @@
       "tags": ["sport"],
       "likes": 77,
       "date": "2018-04-16",
-      "price": 50
+      "price": 50,
+      "alt": "Un skieur en train de faire une figure dans les airs sous un ciel bleu."
     },
     {
       "id": 9253445784,
@@ -595,7 +653,8 @@
       "tags": ["sport"],
       "likes": 88,
       "date": "2018-04-22",
-      "price": 65
+      "price": 65,
+      "alt": "Fin de course professionnel de sprinteuse."
     },
     {
       "id": 22299394,
@@ -605,7 +664,8 @@
       "tags": ["sport"],
       "likes": 95,
       "date": "2018-04-27",
-      "price": 70
+      "price": 70,
+      "alt": "Un skateur torse nu en train de faire un tricks dans un skate park en bord de mer."
     },
     {
       "id": 3452342633,
@@ -615,7 +675,8 @@
       "tags": ["architecture"],
       "likes": 52,
       "date": "2018-05-03",
-      "price": 75
+      "price": 75,
+      "alt": "Photo en noir et blanc en contre-plongée d'une architecture moderne sur plusieurs étages concentrique avec une verrière."
     },
     {
       "id": 939234243,
@@ -625,7 +686,8 @@
       "tags": ["architecture"],
       "likes": 55,
       "date": "2018-05-10",
-      "price": 72
+      "price": 72,
+      "alt": "Bâtiment très moderne constitué uniquement de courbe et entouré d'eau."
     },
     {
       "id": 222959233,
@@ -635,7 +697,8 @@
       "tags": ["architecture"],
       "likes": 85,
       "date": "2018-05-15",
-      "price": 71
+      "price": 71,
+      "alt": "Photo en noir et blanc en contre-plongée d'une architecture moderne sur plusieurs étages ressemblant à un fer à cheval."
     },
     {
       "id": 965933434,
@@ -645,7 +708,8 @@
       "tags": ["architecture"],
       "likes": 66,
       "date": "2018-05-20",
-      "price": 58
+      "price": 58,
+      "alt": "Photo en contre plongée d'une architecture moderne constitué de mirroir et de grille."
     },
     {
       "id": 777723343,
@@ -655,7 +719,8 @@
       "tags": ["architecture"],
       "likes": 79,
       "date": "2018-05-21",
-      "price": 80
+      "price": 80,
+      "alt": "Photo en contre plongée d'une architecture moderne avec beaucoup de courbe et un espace vide au centre."
     }
   ]
 }
