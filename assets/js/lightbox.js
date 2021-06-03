@@ -18,15 +18,18 @@ export const Lightbox = () => {
   
 
   // Close the lightbox on click and with escape
+  const closeLightbox = (e) =>{
+    e.preventDefault();
+    lightboxDiv.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      e.preventDefault();
-      lightboxDiv.classList.add("hidden");
+      closeLightbox(e);
     }
   });
   document.querySelector(".lightbox__close").onclick = (e) => {
-    e.preventDefault();
-    lightboxDiv.classList.add("hidden");
+    closeLightbox(e);
   };
 
 
@@ -105,9 +108,9 @@ export const Lightbox = () => {
   // Once you have the media create html for it
   for (let i = 0 ; i < medias.length ; i++ ) {
     medias[i].addEventListener("click", (e) => {
-      console.log('hello', medias[i])
       e.preventDefault();
       lightboxDiv.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
       currentMediaIndex = i;
       setLightboxContent(medias[currentMediaIndex]);
     });

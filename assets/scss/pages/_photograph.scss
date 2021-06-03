@@ -1,7 +1,6 @@
 @import "../main.scss";
 
 #banner-container {
-  height: 125px;
   flex-basis: 100%;
   justify-content: space-between;
   align-items: center;
@@ -13,18 +12,20 @@
   }
   .photographer-description {
     line-height: 1.5em;
+    width: 65%;
     @include desktop {
+      width: auto;
       height: 200px;
       justify-content: space-between;
       padding: 0em 2.5em;
     }
     h1 {
+      line-height: 1em;
       font-weight: lighter;
       font-size: map-get($font-size, profil-name);
       color: $color-secondary;
       margin: 0;
       margin-bottom: 0.2em;
-      white-space: nowrap;
       @include desktop {
         font-size: map-get($font-size, heading);
       }

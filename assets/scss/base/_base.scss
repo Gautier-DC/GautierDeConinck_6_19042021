@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+*:focus{
+  border: solid 2px $color-primary;
+}
+
 body {
   font-size: 1em;
   font-family: "DM Sans", sans-serif;

@@ -7,16 +7,20 @@ export const setModal = () => {
   let formContact = document.forms["contact"];
   let valmessage = document.createElement('p');
   let buttonClose = document.createElement("button");
+  let mainWrapper = document.getElementById('main-wrapper');
   
 
   // Launch modal form
   const launchModal = () => {
+    mainWrapper.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('aria-hidden', 'false');
     modal.style.display = "flex";
     document.body.style.overflow = "hidden";
     valmessage.remove();
     buttonClose.remove();
     modalWrapper.classList.remove('message-sended');
     formContact.style.display = 'block';
+    document.getElementById("firstName").focus();
   };
 
   // Modal launch event
@@ -26,6 +30,8 @@ export const setModal = () => {
   const closeModal = () => {
     modal.style.display = "none";
     document.body.style.overflow = "auto";
+    mainWrapper.setAttribute('aria-hidden', 'false');
+    modal.setAttribute('aria-hidden', 'true');
   };
 
   // Modal close event
@@ -89,6 +95,7 @@ export const setModal = () => {
       email.classList.add("error--bg");
       email.insertAdjacentElement("afterend", createErrorSpan("Veuillez entrer une adresse mail valide."));
     }
+    // Display validation message
     else {
       formContact.style.display = 'none';
       modalWrapper.classList.add('message-sended','d-flex', 'column');
