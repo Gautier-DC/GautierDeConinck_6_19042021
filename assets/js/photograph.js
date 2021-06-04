@@ -62,7 +62,7 @@ const setProfilHTML = (photographer) => {
   });
   profilHTML += `</ul>
       </div>
-      <button class="open-modal-btn"><a href="#modal-photographer" class="js-modal">Contactez-moi</a></button>
+      <button class="open-modal-btn" aria-pressed="false"><a href="#modal-photographer" class="js-modal">Contactez-moi</a></button>
       <figure class="profil-pic">
         <img src="/assets/img/Sample_Photos/Photographers_ID_Photos/${photographer.portrait}" alt="" />
       </figure>
@@ -87,23 +87,9 @@ const displayGallery = (media, folderName) => {
     let structureMediaHTML = `
     <figure class="picture-card d-flex column">
       <div class="picture-description d-flex row">
-        <h3 id="picture-name">${elt.title}</h3>
+        <h3 class="picture-name">${elt.title}</h3>
         <p class="counter-like">${elt.likes}</p>
-        <svg
-          aria-hidden="false"
-          class="heart"
-          focusable="true"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          aria-describedby="title svg-description"
-        >
-          <title id="title">Coeur</title>
-          <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
-          <path
-            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
-          />
-        </svg>
+        <i class="fas fa-heart heart" focusable="true" tabindex="1"></i>
       </div>
     </figure>
     `;
@@ -112,7 +98,7 @@ const displayGallery = (media, folderName) => {
     if (elt.image) {
       mediaHTML = `
           <a href="../assets/img/Sample_Photos/${folderName}/${elt.image} " class="jsMedia"
-            ><img
+          tabindex="1"><img
               src="../assets/img/Sample_Photos/${folderName}/${elt.image} "
               alt="${elt.alt}"              
           /></a>
@@ -123,7 +109,7 @@ const displayGallery = (media, folderName) => {
       //Create html of the media
       mediaHTML = `
       <a data-folderName="${folderName}" data-videoName="${videoName}" data-mediaType="video" class="jsMedia" href="../assets/img/Sample_Photos/${folderName}/${videoName}.mp4 "
-      ><video width="250" >
+      ><video width="250" tabindex="1">
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.mp4
               type="video/mp4">
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.ogv
@@ -135,14 +121,15 @@ const displayGallery = (media, folderName) => {
         `;
     } else {
       // error message
-      mediaHTML = `<p id="errorMedia">Sorry we didn't find anything for this photographer</p>`;
+      structureMediaHTML = `<p id="errorMedia">Sorry we didn't find anything for this photographer</p>`;
     }
     // Add it to gallery section
     gallery.insertAdjacentHTML("beforeend", structureMediaHTML);
     document.getElementsByClassName("picture-card")[i].insertAdjacentHTML("afterbegin", mediaHTML);
-    // Animation for the like button on each media
+    // Animation and counterfor the like button on each media
     const heart = document.getElementsByClassName("heart")[i];
-    heart.addEventListener("click", function likeButton() {
+    const likeButton = (e) => {
+      e.preventDefault();
       let counterLike = document.getElementsByClassName("counter-like")[i];
       // Add +1 on media counter
       elt.likes++;
@@ -159,7 +146,16 @@ const displayGallery = (media, folderName) => {
       setTimeout(function () {
         heart.classList.add("like-anim");
       }, 10);
+    }
+
+    heart.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        likeButton(e);
+      }
     });
+    heart.onclick = (e) =>{
+      likeButton(e);
+    };
   });
   document.getElementById("total-likes").innerHTML = totalLikes + " ♥";
 };

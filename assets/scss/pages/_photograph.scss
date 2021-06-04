@@ -64,6 +64,7 @@
       display: flex;
       justify-content: space-between;
       align-items: start;
+      z-index: 1;
       #total-likes {
         text-align: left;
         flex-grow: 1;
@@ -83,9 +84,9 @@
     margin-left: -80.3px;
     @include desktop {
       position: relative;
-      left: 4em;
+      left: 5em;
       bottom: 0;
-      top: 1.5em;
+      top: 2em;
     }
   }
   .profil-pic {

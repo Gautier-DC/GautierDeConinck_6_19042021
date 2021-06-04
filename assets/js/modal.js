@@ -8,10 +8,12 @@ export const setModal = () => {
   let valmessage = document.createElement('p');
   let buttonClose = document.createElement("button");
   let mainWrapper = document.getElementById('main-wrapper');
+  let openModalBtn = document.querySelector(".open-modal-btn");
   
 
   // Launch modal form
   const launchModal = () => {
+    openModalBtn.setAttribute('aria-pressed', 'true');
     mainWrapper.setAttribute('aria-hidden', 'true');
     modal.setAttribute('aria-hidden', 'false');
     modal.style.display = "flex";
@@ -24,7 +26,7 @@ export const setModal = () => {
   };
 
   // Modal launch event
-  document.querySelector(".open-modal-btn").addEventListener("click", launchModal);
+  openModalBtn.addEventListener("click", launchModal);
 
   // Close modal form
   const closeModal = () => {
@@ -32,6 +34,7 @@ export const setModal = () => {
     document.body.style.overflow = "auto";
     mainWrapper.setAttribute('aria-hidden', 'false');
     modal.setAttribute('aria-hidden', 'true');
+    openModalBtn.setAttribute('aria-pressed', 'false');
   };
 
   // Modal close event
