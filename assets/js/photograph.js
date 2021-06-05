@@ -89,7 +89,7 @@ const displayGallery = (media, folderName) => {
       <div class="picture-description d-flex row">
         <h3 class="picture-name">${elt.title}</h3>
         <p class="counter-like">${elt.likes}</p>
-        <i class="fas fa-heart heart" focusable="true" tabindex="1"></i>
+        <i class="fas fa-heart heart" focusable="true" tabindex="0"></i>
       </div>
     </figure>
     `;
@@ -98,7 +98,7 @@ const displayGallery = (media, folderName) => {
     if (elt.image) {
       mediaHTML = `
           <a href="../assets/img/Sample_Photos/${folderName}/${elt.image} " class="jsMedia"
-          tabindex="1"><img
+          tabindex="0"><img
               src="../assets/img/Sample_Photos/${folderName}/${elt.image} "
               alt="${elt.alt}"              
           /></a>
@@ -108,8 +108,8 @@ const displayGallery = (media, folderName) => {
       let videoName = elt.video.split(".")[0];
       //Create html of the media
       mediaHTML = `
-      <a data-folderName="${folderName}" data-videoName="${videoName}" data-mediaType="video" class="jsMedia" href="../assets/img/Sample_Photos/${folderName}/${videoName}.mp4 "
-      ><video width="250" tabindex="1">
+      <a data-folderName="${folderName}" data-videoName="${videoName}" data-mediaType="video" class="jsMedia" href="../assets/img/Sample_Photos/${folderName}/${videoName}.mp4" tabindex="0"
+      ><video width="250" tabindex="-1" >
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.mp4
               type="video/mp4">
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.ogv
@@ -178,6 +178,7 @@ const buildOptionsList = (medias, photographerName, orderedOptions = filtersOpti
     options.classList.add("option");
     options.setAttribute("aria-selected", "false");
     options.setAttribute("role", "option");
+    options.setAttribute("tabindex", "0");
     options.innerHTML = `${elt}`;
     document.getElementById("filters-options-list").append(options);
     clickOnFilter(medias, photographerName, options, elt);
@@ -185,7 +186,9 @@ const buildOptionsList = (medias, photographerName, orderedOptions = filtersOpti
 };
 // Define filtering function on each button
 const clickOnFilter = (medias, photographerName, li, optionName) => {
-  li.addEventListener("click", (e) => {
+  // Function to filter the content
+  const handleFilters = (e) => {
+    e.preventDefault();
     let orderedMedia = medias;
     if (optionName == "Date") {
       orderedMedia = orderByDate(e, medias);
@@ -203,6 +206,16 @@ const clickOnFilter = (medias, photographerName, li, optionName) => {
     displayGallery(orderedMedia, photographerName);
     Lightbox();
     buildOptionsList(orderedMedia, photographerName);
+  };
+  // Filter onClick
+  li.onclick = (e) => {
+    handleFilters(e)
+  }
+  // Filter when enter is press
+  li.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      handleFilters(e);
+    }
   });
 };
 
