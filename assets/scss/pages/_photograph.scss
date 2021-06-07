@@ -88,6 +88,9 @@
       bottom: 0;
       top: 2em;
     }
+    &:focus{
+      border: solid 2px $color-secondary;
+    }
   }
   .profil-pic {
     height: 100px;
@@ -132,6 +135,9 @@
       @include desktop {
         height: 300px;
       }
+      &:focus{
+        border: solid 2px $color-primary;
+      }
       img {
         height: 100%;
         width: 100%;
@@ -165,7 +171,7 @@
     fill: $color-primary;
     cursor: pointer;
     opacity: 0.5;
-    &:hover {
+    &:hover, &:focus {
       opacity: 1;
       transition: all 0.3s;
     }

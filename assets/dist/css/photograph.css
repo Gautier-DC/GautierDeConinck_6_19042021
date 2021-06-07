@@ -323,9 +323,6 @@ template {
 *::after {
   box-sizing: border-box; }
 
-*:focus {
-  border: solid 2px #901C1C; }
-
 body {
   font-size: 1em;
   font-family: "DM Sans", sans-serif;
@@ -381,7 +378,7 @@ section {
   margin: 0.2em;
   color: #901C1C;
   font-size: 0.8em; }
-  .tags:hover {
+  .tags:hover, .tags:focus li {
     cursor: pointer;
     background-color: #901C1C;
     color: #fff;
@@ -486,6 +483,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    #filters #filters-button:focus {
+      border: solid 2px #D3573C; }
   #filters .filters-options-list {
     background-color: #901C1C;
     color: #fff;
@@ -512,7 +511,7 @@ section {
     display: block;
     cursor: pointer;
     transition: all 0.5s; }
-    #filters .option:hover {
+    #filters .option:hover, #filters .option:focus {
       cursor: pointer;
       background-color: #D3573C; }
   #filters li:nth-child(1)::after,
@@ -920,6 +919,8 @@ header {
         left: 5em;
         bottom: 0;
         top: 2em; } }
+    #banner-container .open-modal-btn:focus {
+      border: solid 2px #D3573C; }
   #banner-container .profil-pic {
     height: 100px;
     flex: 0 0 100px;
@@ -961,6 +962,8 @@ header {
       @media screen and (min-width: 1200px) {
         #gallery .picture-card a {
           height: 300px; } }
+      #gallery .picture-card a:focus {
+        border: solid 2px #901C1C; }
       #gallery .picture-card a img {
         height: 100%;
         width: 100%;
@@ -990,7 +993,7 @@ header {
     fill: #901C1C;
     cursor: pointer;
     opacity: 0.5; }
-    .picture-description .heart:hover {
+    .picture-description .heart:hover, .picture-description .heart:focus {
       opacity: 1;
       transition: all 0.3s; }
   .picture-description p {
