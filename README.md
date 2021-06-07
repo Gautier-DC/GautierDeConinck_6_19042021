@@ -18,3 +18,7 @@ This project has 2 mode:
 ```npm run serve``` --> For development mode. Once you run it, allows you to code in sass and see it in real time in your browser.
 
 ```npm run start``` --> For production mode. Compile your sass into a minified css.
+
+## CHECK
+
+[![DeepScan grade](https://deepscan.io/api/teams/14173/projects/17270/branches/390519/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=14173&pid=17270&bid=390519)

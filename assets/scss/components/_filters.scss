@@ -28,6 +28,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    &:focus{
+      border: solid 2px $color-secondary;
+    }
   }
   .filters-options-list {
     @include button;
@@ -51,7 +54,7 @@
     display: block;
     cursor: pointer;
     transition: all 0.5s;
-    &:hover {
+    &:hover, &:focus {
       cursor: pointer;
       background-color: $color-secondary;
     }
