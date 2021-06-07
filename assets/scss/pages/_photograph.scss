@@ -1,7 +1,6 @@
 @import "../main.scss";
 
 #banner-container {
-  height: 125px;
   flex-basis: 100%;
   justify-content: space-between;
   align-items: center;
@@ -13,18 +12,20 @@
   }
   .photographer-description {
     line-height: 1.5em;
+    width: 65%;
     @include desktop {
+      width: auto;
       height: 200px;
       justify-content: space-between;
       padding: 0em 2.5em;
     }
     h1 {
+      line-height: 1em;
       font-weight: lighter;
       font-size: map-get($font-size, profil-name);
       color: $color-secondary;
       margin: 0;
       margin-bottom: 0.2em;
-      white-space: nowrap;
       @include desktop {
         font-size: map-get($font-size, heading);
       }
@@ -47,23 +48,30 @@
     }
   }
   #likes-price {
-    @include static-block;
-    bottom: -1em;
-    right: 3%;
-    height: 89px;
-    width: 376px;
-    padding-top: 1em;
-    border-radius: 0.5em 0.5em 0 0;
-    font-size: map-get($font-size , location);
-    font-weight: lighter;
-    justify-content: space-between;
-    align-items: center;
-    #likes {
-      text-align: left;
-      margin-right: 2em;
-    }
-    #price {
-      text-align: right;
+    display: none;
+    @include desktop {
+      @include static-block;
+      padding-left: 2em;
+      padding-right: 2em;
+      bottom: -1em;
+      right: 3%;
+      height: 89px;
+      width: 376px;
+      padding-top: 1em;
+      border-radius: 0.5em 0.5em 0 0;
+      font-size: map-get($font-size, location);
+      font-weight: lighter;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      z-index: 1;
+      #total-likes {
+        text-align: left;
+        flex-grow: 1;
+      }
+      #price {
+        text-align: right;
+      }
     }
   }
 
@@ -76,9 +84,12 @@
     margin-left: -80.3px;
     @include desktop {
       position: relative;
-      left: 4em;
+      left: 5em;
       bottom: 0;
-      top: 1.5em;
+      top: 2em;
+    }
+    &:focus{
+      border: solid 2px $color-secondary;
     }
   }
   .profil-pic {
@@ -105,7 +116,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 350px);
     justify-content: space-between;
-    grid-gap: 20px;  
+    grid-gap: 20px;
   }
   .picture-card {
     height: 218px;
@@ -123,6 +134,9 @@
       margin-bottom: 0.5em;
       @include desktop {
         height: 300px;
+      }
+      &:focus{
+        border: solid 2px $color-primary;
       }
       img {
         height: 100%;
@@ -157,9 +171,9 @@
     fill: $color-primary;
     cursor: pointer;
     opacity: 0.5;
-    &:hover{
-        opacity: 1;
-        transition: all 0.3s;
+    &:hover, &:focus {
+      opacity: 1;
+      transition: all 0.3s;
     }
   }
   p {
@@ -169,5 +183,5 @@
 }
 
 .like-anim {
-  animation: heartbeat ease forwards;
+  animation: heartbeat 0.5s ease forwards;
 }

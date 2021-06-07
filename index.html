@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Trouvez votre photographe en un clic avec Fisheye !" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/dist/css/home.css" />
+    <link rel="stylesheet" href="assets/dist/css/home.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <title>Fisheye - Bienvenue</title>
@@ -17,7 +17,7 @@
       /></a>
       <div id="h1-container"><h1>Nos photographes</h1></div>
       <!-- Generate tags with JS -->
-      <nav id="tag-list" role="navigation" aria-label="photographer categories">
+      <nav id="tag-list" aria-label="photographer categories">
         <ul class="d-flex row" id="filters-tags-container">
           <li class="tags"><a href="index.html">#All</a></li>
           <li class="tags"><a href="?tag=portrait">#Portrait</a></li>
@@ -32,8 +32,8 @@
       </nav>
     </header>
     <main id="main-wrapper">
-      <a href="#" id="skiplink">Passer au contenu</a>
-      <section class="d-flex photographers-list">
+      <a href="#photographers-list" id="skiplink">Passer au contenu</a>
+      <section class="d-flex photographers-list" id="photographers-list">
         <!-- Generate photographers list with JS 
         <article class="d-flex column">
           <a href="/pages/photograph.html" class="main-profil d-flex column">
@@ -51,41 +51,9 @@
                 <li class="tags">#Fashion</li>
               </ul>
             </div>
-        </article>
-        <article class="d-flex column">
-          <a href="#" class="d-flex column">
-            <figure class="profil-pic"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="Profil de Kimi Keel" /></figure>
-            <div class="d-flex column profil-description">
-              <h2>Mimi Keel</h2>
-              <h3>London, UK</h3>
-              <p>Voir le beau dans le quotidien</p>
-              <p class="price">250€/jour</p>
-              <ul class="d-flex row tag-container">
-                <li class="tags">#Portrait</li>
-                <li class="tags">#Art</li>
-                <li class="tags">#Fashion</li>
-                <li class="tags">#Fashion</li>
-              </ul>
-            </div>
-          </a>
-        </article>
-        <article class="d-flex column">
-          <figure class="profil-pic"><a href="/pages/photograph.html"><img src="assets/img/Sample_Photos/Photographers_ID_Photos/MimiKeel.jpg" alt="Profil de Kimi Keel" /></a></figure>
-          <div class="d-flex column profil-description">
-            <h2><a href="/pages/photograph.html">Mimi Keel</a></h2>
-            <h3>London, UK</h3>
-            <p>Voir le beau dans le quotidien</p>
-            <p class="price">250€/jour</p>
-            <ul class="d-flex row tag-container">
-              <li class="tags">#Portrait</li>
-              <li class="tags">#Art</li>
-              <li class="tags">#Fashion</li>
-              <li class="tags">#Fashion</li>
-            </ul>
-          </div>
-        </article> -->
+        </article>-->
       </section>
     </main>
-    <script src="./assets/dist/js/home.js"></script>
+    <script src="assets/dist/js/home.js"></script>
   </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/dist/css/photograph.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <title>Fisheye - Profil de</title>
+    <title></title>
   </head>
   <body>
     <!-- HEADER -->
@@ -18,7 +18,7 @@
       /></a>
     </header>
     <main id="main-wrapper">
-      <section class="d-flex row" id="banner-container" role="banner">
+      <section class="d-flex row" id="banner-container">
         <!-- <div class="photographer-description d-flex column">
           <h1>Kold Barkley</h1>
           <h2 id="location">Auckland, New Zealand</h2>
@@ -38,89 +38,82 @@
         <div class="left-area d-flex row">
           <span id="filters-options"> Trier par </span>
           <div id="option-wrapper" class="option-wrapper">
-            <button aria-haspopup="listbox" aria-labelledby="filters-options filters-button" aria-expanded="false" id="filters-button">
+            <button
+              id="filters-button"
+              aria-controls="filters-options-list"
+              aria-haspopup="true"
+              aria-labelledby="filters-options filters-button"
+              aria-expanded="true"
+            >
               <span>Popularité</span>
-              <div class="arrow"></div>
+              <span class="arrow"></span>
             </button>
-            <ul class="filters-options-list" id="filters-options-list" tabindex="-1" role="listbox" aria-labelledby="filters-options" aria-activedescendant="IDREF" class="hidden">
-              <!--<li id="filters-options-popularity" class="option selected" aria-selected="true" role="option">Popularité</li>
-                <li id="filters-options-date" class="option" aria-selected="false" role="option">Date</li>
-                <li id="filters-options-title" class="option" aria-selected="false" role="option">Titre</li>-->
+            <ul
+              class="filters-options-list hidden"
+              id="filters-options-list"
+              tabindex="-1"
+              role="listbox"
+              aria-labelledby="filters-button"
+              aria-activedescendant="filters-options-popularity"
+            >
+              <!-- Generate with JS
+                <li id="filters-options-popularity" class="option selected" aria-selected="true" role="option">Popularité</li>
+                <li id="filters-options-date" class="option" aria-selected="false" role="option">Date</li> -->
             </ul>
           </div>
         </div>
       </section>
       <section id="gallery">
-        <!-- Sample / replace it with JS 
-        <figure class="picture-card d-flex column">
-          <a href="#"
-            ><img
-              src="../assets/img/Sample_Photos/Nabeel/Portrait_Sunkissed.jpg"
-              alt="Portrait d'une femme avec les cheveux roux et du rouge à lèvres "
-          /></a>
-          <div class="picture-description d-flex row">
-            <h3 id="picture-name">Arc-en-ciel</h3>
-            <p>70€</p>
-            <svg
-              aria-hidden="true"
-              class="heart"
-              focusable="false"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              aria-describedby="title svg-description"
-            >
-              <title id="title">Coeur</title>
-              <desc id="svg-description">la forme d'un coeur dessiné simplement</desc>
-              <path
-                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
-              />
-            </svg>
-          </div>
-        </figure>
-        -->
+        <!-- Insert with JS -->
       </section>
 
       <!--Modal -->
 
-<aside id="modal-photographer" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" >
+      <div id="modal-photographer" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal">
         <div class="modal-wrapper">
           <form name="contact" action="index.html" autocomplete="off" method="get" onsubmit="validate();">
-            <div role="group" aria-labelledby="coordonnees">
+            <div role="group" aria-labelledby="contact-information">
+              <p class="hidden" id="contact-information">Coordonnées</p>
               <div class="d-flex row" id="modalHeader">
-                <h1 id="titlemodal">Contactez-moi Mimi Keel</h1>
+                <h1 id="titlemodal"></h1>
                 <i class="fas fa-times close-btn"></i>
               </div>
-                <div class="formData">
-                  <label for="firstName">Prénom</label><br />
-                  <input class="text-control" type="text" id="firstName" name="firstName" aria-required=true />
-                </div>
-                <div class="formData">
-                  <label for="lastName">Nom</label><br />
-                  <input class="text-control" type="text" id="lastName" name="lastName" aria-required=true />
-                </div>
-                <div class="formData">
-                  <label for="email">E-mail</label><br />
-                  <input class="text-control" id="email" name="email" aria-required=true />
-                </div>
-            </div>
               <div class="formData">
-                <label for="message">Votre message</label><br />
-                <textarea class="text-control" id="message" name="message" placeholder="Indiquez quel est votre projet pour que le photographe puisse vous répondre plus facilement. "></textarea>
+                <label for="firstName">Prénom</label><br />
+                <input class="text-control" type="text" id="firstName" name="firstName" aria-required="true" />
               </div>
-              <input class="btn-submit" type="submit" value="Envoyer" />
-            </form>
+              <div class="formData">
+                <label for="lastName">Nom</label><br />
+                <input class="text-control" type="text" id="lastName" name="lastName" aria-required="true" />
+              </div>
+              <div class="formData">
+                <label for="email">E-mail</label><br />
+                <input class="text-control" id="email" name="email" aria-required="true" />
+              </div>
+            </div>
+            <div class="formData">
+              <label for="message">Votre message</label><br />
+              <textarea
+                class="text-control"
+                id="message"
+                name="message"
+                placeholder="Indiquez quel est votre projet pour que le photographe puisse vous répondre plus facilement. "
+              ></textarea>
+            </div>
+            <input class="btn-submit" type="submit" value="Envoyer" />
+          </form>
+        </div>
+      </div>
 
-      </aside>
-
-      <!--<div class="lightbox">
+      <!-- Generate Lightbox with JS
+        <div class="lightbox">
         <button class="lightbox__close"><i class="fas fa-times"></i></button>
         <button class="lightbox__next"><i class="fas fa-chevron-right"></i></button>
         <button class="lightbox__prev"><i class="fas fa-chevron-left"></i></button>
         <div class="lightbox__container d-flex row">
           <img src="/assets/img/Sample_Photos/Mimi/Event_PintoWedding.jpg" alt="">
         </div>
-      </div>-->
+      </div> -->
     </main>
     <script src="/assets/dist/js/photograph.js"></script>
   </body>
