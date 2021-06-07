@@ -39,9 +39,6 @@
   position: fixed;
   order: 99;
   display: none;
-    @include desktop {
-      display: block;
-    }
   }
 
   @mixin btn {
