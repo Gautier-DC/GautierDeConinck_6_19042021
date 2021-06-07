@@ -1,8 +1,9 @@
 export const Lightbox = () => {
   //DOM Selector
   let mainWrapper = document.getElementById('main-wrapper');
-  // Create lightbox
   let prevLightbox = document.getElementsByClassName('lightbox');
+  // Create lightbox
+
   // Remove any lightbox div that already exist
   if(prevLightbox.length > 0) {
     prevLightbox[0].remove();
@@ -11,7 +12,7 @@ export const Lightbox = () => {
   let currentMediaIndex;
   const lightboxDiv = document.createElement('div');
   lightboxDiv.classList.add('lightbox', 'hidden');
-  lightboxDiv.setAttribute('aria-hidden', 'true')
+  lightboxDiv.setAttribute('aria-hidden', 'true');
   document.body.appendChild(lightboxDiv);
   lightboxDiv.innerHTML = `<button class='lightbox__close'><i class='fas fa-times'></i></button>
   <button class='lightbox__next'><i class='fas fa-chevron-right'></i></button>
@@ -40,6 +41,7 @@ export const Lightbox = () => {
     e.preventDefault();
     lightboxDiv.classList.add('hidden');
     document.body.style.overflow = 'auto';
+    mainWrapper.setAttribute('aria-hidden', 'false');
     lightboxDiv.setAttribute('aria-hidden', 'true');
     window.removeEventListener('keydown', handlePressPlay);
   }
@@ -60,11 +62,11 @@ export const Lightbox = () => {
     // if last media then select first one in list
     if (currentMediaIndex == medias.length - 1) {
       setLightboxContent(medias[0]);
-      currentMediaIndex = 0
+      currentMediaIndex = 0;
     } else {
       // if there is a next media display it
       setLightboxContent(medias[currentMediaIndex + 1]);
-      currentMediaIndex = currentMediaIndex + 1
+      currentMediaIndex = currentMediaIndex + 1;
     }
   };
 
@@ -85,11 +87,11 @@ export const Lightbox = () => {
     // if first media then select last one in list
     if (currentMediaIndex == 0) {
       setLightboxContent(medias[medias.length - 1]);
-      currentMediaIndex = medias.length - 1
+      currentMediaIndex = medias.length - 1;
     } else {
       // if there is a next media display it
       setLightboxContent(medias[currentMediaIndex - 1]);
-      currentMediaIndex = currentMediaIndex - 1
+      currentMediaIndex = currentMediaIndex - 1;
     }
   };
 
@@ -108,7 +110,7 @@ export const Lightbox = () => {
   const setLightboxContent = (currentMedia) => {
     if (currentMedia.dataset.mediatype === 'video') {
       lightboxContainer.innerHTML = `
-      <video class='lightbox-video' controls>
+      <video class='lightbox-video' controls alt='${currentMedia.dataset.alt}'>
       <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.mp4
       type='video/mp4'>
       <source src=../assets/img/Sample_Photos/${currentMedia.dataset.foldername}/${currentMedia.dataset.videoname}.ogv
@@ -117,16 +119,18 @@ export const Lightbox = () => {
       type='video/webm'>
       Sorry, your browser doesn't support embedded videos.
       </video>
-      <h3 class='picture-description' id='picture-name'>` + currentMedia.href.split('/')[7].replace(/_/g, ' ').slice(0, -4) + `</h3>`;      
+      <h3 class='picture-description'>${currentMedia.dataset.title}</h3>`;        
       window.addEventListener('keydown', handlePressPlay);      
     } else {
       lightboxContainer.innerHTML = `
-      <img src='${currentMedia.href}' alt='${currentMedia.alt}'>
-      <h3 class='picture-description'></h3>`;
+      <img src='${currentMedia.href}' alt='${currentMedia.dataset.alt}'>
+      <h3 class='picture-description'>${currentMedia.dataset.title}</h3>`;
     }
+        
   };
   // Get the media
   const medias = Array.from(document.querySelectorAll('.jsMedia'));
+  
   
   // Once you have the media create html for it
   for (let i = 0 ; i < medias.length ; i++ ) {
@@ -140,5 +144,5 @@ export const Lightbox = () => {
       setLightboxContent(medias[currentMediaIndex]);
       lightboxDiv.focus();
     });
-  }
+  };
 };

@@ -99,7 +99,7 @@ const displayGallery = (media, folderName) => {
     if (elt.image) {
       mediaHTML = `
           <a href='../assets/img/Sample_Photos/${folderName}/${elt.image} ' class='jsMedia'
-          tabindex='0'><img
+          tabindex='0' data-alt='${elt.alt}' data-title='${elt.title}'><img
               src='../assets/img/Sample_Photos/${folderName}/${elt.image} '
               alt='${elt.alt}'              
           /></a>
@@ -109,7 +109,7 @@ const displayGallery = (media, folderName) => {
       let videoName = elt.video.split('.')[0];
       //Create html of the media
       mediaHTML = `
-      <a data-folderName='${folderName}' data-videoName='${videoName}' data-mediaType='video' class='jsMedia' href='../assets/img/Sample_Photos/${folderName}/${videoName}.mp4' tabindex='0'
+      <a data-folderName='${folderName}' data-videoName='${videoName}' data-mediaType='video' data-alt='${elt.alt}' data-title='${elt.title}' class='jsMedia' href='../assets/img/Sample_Photos/${folderName}/${videoName}.mp4' tabindex='0'
       ><video width='250' tabindex='-1' >
         <source src=../assets/img/Sample_Photos/${folderName}/${videoName}.mp4
               type='video/mp4'>
