@@ -10,15 +10,15 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
-    "dns-packet": "^5.2.4",
-    "mini-css-extract-plugin": "^1.6.0",
-    "css-loader": "^5.2.4",
+    "dns-packet": "^5.3.0",
+    "mini-css-extract-plugin": "^2.0.0",
+    "css-loader": "^6.9.0",
     "node-sass": "^5.0.0",
-    "postcss-loader": "^5.3.0",
-    "postcss": "^8.2.15",
-    "webpack": "^5.37.0",
+    "postcss-loader": "^7.3.4",
+    "postcss": "^8.4.6",
+    "webpack": "^5.79.0",
     "sass-loader": "^11.1.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^5.1.0"
   },
   "repository": {
     "type": "git",
